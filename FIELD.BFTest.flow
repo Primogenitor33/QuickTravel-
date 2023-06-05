@@ -1,0 +1,7 @@
+import( "BASE_FIELD.BF" );
+import( "QTTest.flow" );
+
+void field_order_party_hook()
+{
+	QuickTravelDisplay();
+}
