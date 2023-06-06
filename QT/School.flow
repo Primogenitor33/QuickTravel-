@@ -1128,10 +1128,10 @@ void SchoolShop()
 
 void gotoSchoolShop()
 {
-    BIT_ON( 4639 );
-    CALL_FCL( 3 );
-    FUNCTION_002B();
-    BIT_OFF( 4639 );
+	BIT_ON( 4639 );
+	CALL_FCL( 3 );
+	FUNCTION_002B();
+	BIT_OFF( 4639 );
 	return;
 }
 
