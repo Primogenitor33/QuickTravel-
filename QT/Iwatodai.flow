@@ -278,8 +278,6 @@ void comu_burger_shop()
         {
             CLOSE_MSG_WIN();
             REMOVE_YEN( 500 );
-            CALL_SFX( 2, 43 );
-            FLD_FUNCTION_0089( 10241, 0, 0, 0, 1.00f );
             FADE( 2, 0 );
             FADE_SYNC();
             BIT_ON( ( ( 0 + 0x0400 ) + 1582 ) );
@@ -387,8 +385,6 @@ void comu_restaurant()
         {
             CLOSE_MSG_WIN();
             REMOVE_YEN( 680 );
-            CALL_SFX( 2, 9 );
-            FLD_FUNCTION_0089( 10244, 0, 0, 0, 1.00f );
             FADE( 2, 0 );
             FADE_SYNC();
             BIT_ON( ( ( 0 + 0x0400 ) + 1582 ) );
@@ -496,8 +492,6 @@ void comu_ramen_shop()
         {
             CLOSE_MSG_WIN();
             REMOVE_YEN( 900 );
-            CALL_SFX( 2, 6 );
-            FLD_FUNCTION_0089( 10243, 0, 0, 0, 1.00f );
             FADE( 2, 0 );
             FADE_SYNC();
             BIT_ON( ( ( 0 + 0x0400 ) + 1582 ) );
