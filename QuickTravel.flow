@@ -651,7 +651,7 @@ void IwatodaiFacilities()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of2);
+	FUNCTION_011C(12, Page1of1);
 	//Close menu on Circle
 	SEL_CHK_PAD(6,20);
 	//Open map on Select
