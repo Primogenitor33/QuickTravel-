@@ -42,7 +42,7 @@ void QuickTravelDisplay()
 			IwatodaiTravel();
 			break;
 		case 10: // Port Island Station
-			QuickTravel_PortIslandStation();
+			PortIslandTravel();
 			break;
 		case 12: // Naganaki Shrine
 			QuickTravel_NaganakiShrine();
@@ -681,20 +681,73 @@ void IwatodaiFacilities()
 	return;
 }
 
-void QuickTravel_PortIslandStation()
+void PortIslandTravel()
 {
-	switch(GET_FIELD_MINOR())
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of1);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	//Open map on Select
+	SEL_CHK_PAD(8,6);
+	//Open shops on Start
+	SEL_CHK_PAD(11,7);
+	int select = SEL( PortIsland );
+	CLOSE_MSG_WIN();
+	switch (select)
 	{
-		case 1: // 
-			Open_PortIslandStation_Win_001();
+		case 0: // Port Island Station
+			PortStation();
 			break;
-		case 2: // 
-			Open_PortIslandStation_Win_002();
+		case 1: // Port Island Station Outskirts
+			PortOutskirts();
+			break;
+		case 2: // Facilities
+			PortFacilities();
+			break;
+		case 3: // Town Map
+			PortMap();
+			break;
+		case 6: // Town Map (Select)
+			PortMap();
+			break;
+		case 7: // Shops (Start)
+			PortFacilities();
 			break;
 		default:
-			No_QuickTravel();
 			break;
 	}
+	return;
+}
+
+void PortFacilities()
+{
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of1);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	//Open map on Select
+	SEL_CHK_PAD(8,6);
+	int select = SEL( PortFacilities );
+	CLOSE_MSG_WIN();
+	switch (select)
+	{
+		case 0: // Flower
+			FlowerShop();
+			break;
+		case 1: // Theater
+			PortTheater();
+			break;
+		case 6: // Town Map (Select)
+			PortMap();
+			break;
+		default:
+			break;
+	}
+	return;
 }
 
 void QuickTravel_NaganakiShrine()
