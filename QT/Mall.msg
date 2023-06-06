@@ -54,10 +54,6 @@
 [f 0 8 65278][f 1 31]If these stats are high enough,[n]then you may even be able to make[n]new acquaintances.[n][f 0 4][e]
 [f 0 8 65278][f 1 31]Beyond that, you can also raise your[n]Persona's stats at the arcade.[n][e]
 
-[msg MONEY_TARINAI]
-[f 0 8 65278][f 1 31]> ......[n][f 0 4][e]
-[f 0 8 65278][f 1 31]> You didn't have enough money.[n][f 0 4][e]
-
 [msg RYOU_KAERU]
 [f 0 8 65278][f 1 31]> It's getting late.[n][f 0 4][e]
 [f 0 8 65278][f 1 31]> You decide to go back to the dorm.[n][f 0 4][e]

@@ -81,7 +81,3 @@
 
 [msg TAKOYAKI_KAWANAI [Takoyaki Cook]]
 [f 0 8 65278][f 1 31]Oh... I see...[n][f 0 4][e]
-
-[msg MONEY_TARINAI]
-[f 0 8 65278][f 1 31]> ......[n][f 0 4][e]
-[f 0 8 65278][f 1 31]> You didn't have enough money...[n][f 0 4][e]

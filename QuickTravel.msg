@@ -55,6 +55,16 @@
 [f 0 8 -258][f 1 31]Hagakure[e]
 [f 0 8 -258][f 1 31]Octopia[e]
 
+[sel PortIsland]
+[f 0 8 -258][f 1 31]Port Island Station[e]
+[f 0 8 -258][f 1 31]Station Outskirts[e]
+[f 0 8 -258][f 1 31]Shops[e]
+[f 0 8 -258][f 1 31]Town Map[e]
+
+[sel PortFacilities]
+[f 0 8 -258][f 1 31]Rafflesia[e]
+[f 0 8 -258][f 1 31]Screen Shot[e]
+
 [msg No_QT]
 [f 0 8 -258][f 1 31]You can't Quick Travel here.[n][f 0 4][e]
 

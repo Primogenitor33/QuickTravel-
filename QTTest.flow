@@ -1,10 +1,13 @@
 import ("QT/Chk_Access/Chk_Access_GekkoukanHigh.flow");
 import ("QT/Chk_Access/Chk_Access_PaulowniaMall.flow");
 import ("QT/Chk_Access/Chk_Access_IwatodaiStation.flow");
+import ("QT/Chk_Access/Chk_Access_PortIslandStation.flow");
 import ("QT/School.flow");
 import ("QT/Mall.flow");
 import ("QT/Iwatodai.flow");
+import ("QT/PortIsland.flow");
 import ("QT/Chk_Access/Chk_Access.msg");
+import ("QT/Shared.msg");
 import ("QuickTravel.msg");
 void QuickTravelDisplay()
 {
@@ -558,6 +561,75 @@ void IwatodaiFacilities()
 			break;
 		case 6: //Town Map (Select)
 			IwatodaiMap();
+			break;
+		default:
+			break;
+	}
+	return;
+}
+
+void PortIslandTravel()
+{
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of1);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	//Open map on Select
+	SEL_CHK_PAD(8,6);
+	//Open shops on Start
+	SEL_CHK_PAD(11,7);
+	int select = SEL( PortIsland );
+	CLOSE_MSG_WIN();
+	switch (select)
+	{
+		case 0: // Port Island Station
+			PortStation();
+			break;
+		case 1: // Port Island Station Outskirts
+			PortOutskirts();
+			break;
+		case 2: // Facilities
+			PortFacilities();
+			break;
+		case 3: // Town Map
+			PortMap();
+			break;
+		case 6: // Town Map (Select)
+			PortMap();
+			break;
+		case 7: // Shops (Start)
+			PortFacilities();
+			break;
+		default:
+			break;
+	}
+	return;
+}
+
+void PortFacilities()
+{
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of1);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	//Open map on Select
+	SEL_CHK_PAD(8,6);
+	int select = SEL( PortFacilities );
+	CLOSE_MSG_WIN();
+	switch (select)
+	{
+		case 0: // Flower
+			FlowerShop();
+			break;
+		case 1: // Theater
+			PortTheater();
+			break;
+		case 6: // Town Map (Select)
+			PortMap();
 			break;
 		default:
 			break;
