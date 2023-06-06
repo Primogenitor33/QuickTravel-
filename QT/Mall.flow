@@ -28,6 +28,7 @@ void MallLobby()
 			No_QuickTravel();
 			break;
 	}
+	return;
 }
 
 void gotoMallLobby()
@@ -35,6 +36,7 @@ void gotoMallLobby()
 	FADE( 2, 0 );
 	FADE_SYNC();
 	CALL_FIELD( 8, 1, 7, 0 );
+	return;
 }
 
 void MallAlley()
@@ -65,6 +67,7 @@ void MallAlley()
 			No_QuickTravel();
 			break;
 	}
+	return;
 }
 
 void gotoMallAlley()
@@ -72,6 +75,7 @@ void gotoMallAlley()
 	FADE( 2, 0 );
 	FADE_SYNC();
 	CALL_FIELD( 8, 9, 0, 0 );
+	return;
 }
 
 void MallMap()
@@ -106,6 +110,7 @@ void MallMap()
 			No_QuickTravel();
 			break;
 	}
+	return;
 }
 
 void gotoMallMap()
@@ -113,6 +118,7 @@ void gotoMallMap()
 	FADE( 1, 0 );
 	FADE_SYNC();
 	CALL_MAP( 1 );
+	return;
 }
 
 void MallVelvet()
@@ -141,6 +147,7 @@ void MallVelvet()
 			No_QuickTravel();
 			break;
 	}
+	return;
 }
 
 void gotoMallVelvet()
@@ -193,6 +200,7 @@ void gotoMallVelvet()
 
 		}
 	}
+	return;
 }
 
 void into_velvet_room()
@@ -201,6 +209,7 @@ void into_velvet_room()
     FADE( 6, 30 );
     FADE_SYNC();
     CALL_FIELD( 8, 3, 0, 0 );
+	return;
 }
 
 void MallClub()
@@ -231,6 +240,7 @@ void MallClub()
 			No_QuickTravel();
 			break;
 	}
+	return;
 }
 
 void gotoMallClub()
@@ -238,6 +248,7 @@ void gotoMallClub()
 	FADE( 2, 0 );
 	FADE_SYNC();
 	CALL_FIELD( 8, 2, 0, 0 );
+	return;
 }
 
 void MallCoffee()
@@ -263,6 +274,7 @@ void MallCoffee()
 			No_QuickTravel();
 			break;
 	}
+	return;
 }
 
 void gotoMallCoffee()
@@ -309,7 +321,7 @@ void gotoMallCoffee()
     {
         comu_coffee_shop();
     }
-
+	return;
 }
 
 void comu_coffee_shop()
@@ -392,7 +404,7 @@ void comu_coffee_shop()
         }
 
     }
-
+	return;
 }
 
 void MallAccessory()
@@ -418,6 +430,7 @@ void MallAccessory()
 			No_QuickTravel();
 			break;
 	}
+	return;
 }
 
 void gotoMallAccessory()
@@ -485,7 +498,7 @@ void gotoMallAccessory()
         CALL_FIELD( 8, 1, 5, 0 );
         return;
     }
-
+	return;
 }
 
 void MallPolice()
@@ -511,6 +524,7 @@ void MallPolice()
 			No_QuickTravel();
 			break;
 	}
+	return;
 }
 
 void gotoMallPolice()
@@ -603,10 +617,12 @@ void gotoMallPolice()
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (7) = 5127
     BIT_OFF( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 7 ) );
     CALL_FIELD( 8, 1, 6, 0 );
+	return;
 }
 
 void comu_police_box()
 {
+	return;
 }
 
 void MallKaraoke()
@@ -632,6 +648,7 @@ void MallKaraoke()
 			No_QuickTravel();
 			break;
 	}
+	return;
 }
 
 void gotoMallKaraoke()
@@ -678,7 +695,7 @@ void gotoMallKaraoke()
     {
         comu_karaoke_shop();
     }
-
+	return;
 }
 
 void comu_karaoke_shop()
@@ -782,7 +799,7 @@ void comu_karaoke_shop()
         }
 
     }
-
+	return;
 }
 
 void MallAntique()
@@ -808,6 +825,7 @@ void MallAntique()
 			No_QuickTravel();
 			break;
 	}
+	return;
 }
 
 void gotoMallAntique()
@@ -866,7 +884,7 @@ void gotoMallAntique()
     {
         comu_antique_shop();
     }
-
+	return;
 }
 
 void comu_antique_shop()
@@ -880,6 +898,33 @@ void comu_antique_shop()
     // bit id (((((0) + (1024)) + (2048)) + (1024)) + (1024)) + (7) = 5127
     BIT_OFF( ( ( ( ( ( 0 + 0x0400 ) + 0x0800 ) + 0x0400 ) + 0x0400 ) + 7 ) );
     CALL_FIELD( 8, 1, 9, 0 );
+	return;
+}
+
+void MallDrug()
+{
+	switch(GET_FIELD_MINOR())
+	{
+		case 1: // Mall Lobby
+			gotoMallDrug();
+			break;
+		case 2: // Club Escapade
+			if(Chk_Access_PaulowniaMall_002_001())
+			{
+				gotoMallDrug();
+			}
+			break;
+		case 9: // Back Alley
+			if(Chk_Access_PaulowniaMall_009_001())
+			{
+				gotoMallDrug();
+			}	
+			break;
+		default:
+			No_QuickTravel();
+			break;
+	}
+	return;
 }
 
 void gotoMallDrug()
@@ -940,32 +985,7 @@ void gotoMallDrug()
         CALL_FIELD( 8, 1, 10, 0 );
         return;
     }
-
-}
-
-void MallDrug()
-{
-	switch(GET_FIELD_MINOR())
-	{
-		case 1: // Mall Lobby
-			gotoMallDrug();
-			break;
-		case 2: // Club Escapade
-			if(Chk_Access_PaulowniaMall_002_001())
-			{
-				gotoMallDrug();
-			}
-			break;
-		case 9: // Back Alley
-			if(Chk_Access_PaulowniaMall_009_001())
-			{
-				gotoMallDrug();
-			}	
-			break;
-		default:
-			No_QuickTravel();
-			break;
-	}
+	return;
 }
 
 void MallCrane()
@@ -991,6 +1011,7 @@ void MallCrane()
 			No_QuickTravel();
 			break;
 	}
+	return;
 }
 
 void gotoMallCrane()
@@ -1013,7 +1034,7 @@ void gotoMallCrane()
     {
         comu_ufo_catcher();
     }
-
+	return;
 }
 
 void comu_ufo_catcher()
@@ -1079,7 +1100,7 @@ void comu_ufo_catcher()
         }
 
     }
-
+	return;
 }
 
 void MallArcade()
@@ -1105,6 +1126,7 @@ void MallArcade()
 			No_QuickTravel();
 			break;
 	}
+	return;
 }
 
 void gotoMallArcade()
@@ -1151,7 +1173,7 @@ void gotoMallArcade()
     {
         comu_game_center();
     }
-
+	return;
 }
 
 void comu_game_center()
@@ -1380,5 +1402,5 @@ void comu_game_center()
         }
 
     }
-
+	return;
 }

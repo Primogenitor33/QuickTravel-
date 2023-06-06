@@ -40,6 +40,21 @@
 [f 0 8 -258][f 1 31]Crane Game[e]
 [f 0 8 -258][f 1 31]Game Panic[e]
 
+[sel Iwatodai]
+[f 0 8 -258][f 1 31]Iwatodai Station[e]
+[f 0 8 -258][f 1 31]Iwatodai Strip Mall, Ground Floor[e]
+[f 0 8 -258][f 1 31]Iwatodai Strip Mall, Upper Floors[e]
+
+[sel Iwatodai2]
+[f 0 8 -258][f 1 31]Shops[e]
+[f 0 8 -258][f 1 31]Town Map[e]
+
+[sel IwatodaiFacilities]
+[f 0 8 -258][f 1 31]Wild-Duck Burger[e]
+[f 0 8 -258][f 1 31]Wakatsu Restaurant[e]
+[f 0 8 -258][f 1 31]Hagakure[e]
+[f 0 8 -258][f 1 31]Octopia[e]
+
 [msg No_QT]
 [f 0 8 -258][f 1 31]You can't Quick Travel here.[n][f 0 4][e]
 

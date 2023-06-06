@@ -1059,7 +1059,7 @@ void SchoolShop()
 		case 2: //School Entrance
 			if(Chk_Access_GekkoukanHigh_002_001())
 			{
-				gotoSchoolLobby();
+				gotoSchoolShop();
 			}
 			break;
 		case 3: //Classroom 2-F

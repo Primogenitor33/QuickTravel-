@@ -1,7 +1,9 @@
 import ("QT/Chk_Access/Chk_Access_GekkoukanHigh.flow");
 import ("QT/Chk_Access/Chk_Access_PaulowniaMall.flow");
+import ("QT/Chk_Access/Chk_Access_IwatodaiStation.flow");
 import ("QT/School.flow");
 import ("QT/Mall.flow");
+import ("QT/Iwatodai.flow");
 import ("QT/Chk_Access/Chk_Access.msg");
 import ("QuickTravel.msg");
 void QuickTravelDisplay()
@@ -13,6 +15,9 @@ void QuickTravelDisplay()
 			break;
 		case 8: // Paulownia Mall
 			MallTravel();
+			break;
+		case 9: // Iwatodai Station
+			IwatodaiTravel();
 			break;
 		default:
 			field_order_party_unhooked();
@@ -406,4 +411,156 @@ int MallFacilities3()
 			break;
 	}
 	return 0;
+}
+
+void IwatodaiTravel()
+{
+	bool selecting = true;
+	int page = 1;
+	while(selecting)
+	{
+		switch(page)
+		{	
+			case 0:
+				selecting = false;
+				break;
+			case 1:
+				page = IwatodaiTravel1();
+				break;
+			case 2:
+				page = IwatodaiTravel2();
+				break;
+			 default:
+				break;
+		}
+	}
+	return;
+}
+
+int IwatodaiTravel1()
+{
+	bool operation = ( GET_MONTH() == 10 ) && ( GET_DAY_OF_MONTH() == 4 ) && ( FUNCTION_0083() == 8 );
+	if(operation)
+	{
+		Chk_Access_IwatodaiStation_001_002();
+		return 0;
+	}
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of2);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	//Open map on Select
+	SEL_CHK_PAD(8,6);
+	//Open shops on Start
+	SEL_CHK_PAD(11,7);
+	//Next Page on D-Pad Right
+	SEL_CHK_PAD(13,4);
+	//Previous Page on D-Pad Left
+	SEL_CHK_PAD(15,5);
+	int select = SEL( Iwatodai );
+	CLOSE_MSG_WIN();
+	switch (select)
+	{
+		case 0: // Iwatodai Station
+			IwatodaiStation();
+			break;
+		case 1: // Iwatodai Strip Mall, Ground Floor
+			IwatodaiGroundFloor();
+			break;
+		case 2: // Iwatodai Strip Mall, Upper Floors
+			IwatodaiUpperFloor();
+			break;
+		case 4: // Next Page (D-Pad Right)
+			return 2;
+		case 5: //Previous Page (D-Pad Left)
+			return 2;
+		case 6: //Town Map (Select)
+			IwatodaiMap();
+			break;
+		case 7: //Shops (Start)
+			IwatodaiFacilities();
+			break;
+		default:
+			break;
+	}
+	return 0;
+}
+
+int IwatodaiTravel2()
+{
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page2of2);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	//Open map on Select
+	SEL_CHK_PAD(8,6);
+	//Open shops on Start
+	SEL_CHK_PAD(11,7);
+	//Next Page on D-Pad Right
+	SEL_CHK_PAD(13,4);
+	//Previous Page on D-Pad Left
+	SEL_CHK_PAD(15,5);
+	int select = SEL( Iwatodai2 );
+	CLOSE_MSG_WIN();
+	switch (select)
+	{
+		case 0: // Facilities
+			IwatodaiFacilities();
+			break;
+		case 1: // Town Map
+			IwatodaiMap();
+			break;
+		case 4: // Next Page (D-Pad Right)
+			return 1;
+		case 5: //Previous Page (D-Pad Left)
+			return 1;
+		case 6: //Town Map (Select)
+			IwatodaiMap();
+			break;
+		case 7: //Shops (Start)
+			IwatodaiFacilities();
+			break;
+		default:
+			break;
+	}
+	return 0;
+}
+
+void IwatodaiFacilities()
+{
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of2);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	//Open map on Select
+	SEL_CHK_PAD(8,6);
+	int select = SEL( IwatodaiFacilities );
+	CLOSE_MSG_WIN();
+	switch (select)
+	{
+		case 0: // Duck
+			WildDuck();
+			break;
+		case 1: // Wakatsu
+			Wakatsu();
+			break;
+		case 2: // Hagakure
+			Hagakure();
+			break;
+		case 3: // Octopia
+			Octopia();
+			break;
+		case 6: //Town Map (Select)
+			IwatodaiMap();
+			break;
+		default:
+			break;
+	}
+	return;
 }
