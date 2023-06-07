@@ -56,7 +56,7 @@ void gotoPortOutskirts()
 {
 	FADE( 2, 0 );
 	FADE_SYNC();
-	CALL_FIELD( 10, 1, 1, 0 );
+	CALL_FIELD( 10, 2, 0, 0 );
 	return;
 }
 
