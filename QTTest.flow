@@ -22,6 +22,9 @@ void QuickTravelDisplay()
 		case 9: // Iwatodai Station
 			IwatodaiTravel();
 			break;
+		case 10: // Port Island Station
+			PortIslandTravel();
+			break;
 		default:
 			field_order_party_unhooked();
 			break;
