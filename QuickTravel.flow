@@ -349,11 +349,6 @@ void MallTravel()
 	SEL_CHK_PAD(11,7);
 	int select = SEL( Mall );
 	CLOSE_MSG_WIN();
-	if (select < 2)
-	{
-		FADE( 3, 0 );
-		FADE_SYNC();
-	}
 	switch (select)
 	{
 		case 0: // Paulownia Mall
