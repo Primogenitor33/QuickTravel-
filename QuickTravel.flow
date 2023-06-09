@@ -1,21 +1,26 @@
-import ("QT/Open_Win/Open_Dorm_F_Win.flow");
-import ("QT/Open_Win/Open_PaulowniaMall_F_Win.flow");
 import ("QT/Chk_Access/Chk_Access_Dorm_F.flow");
 import ("QT/Chk_Access/Chk_Access_PaulowniaMall_F.flow");
 import ("QT/Chk_Access/Chk_Access_GekkoukanHigh.flow");
-import ("QT/Chk_Access/Chk_Access_Dorm.flow");
+import ("QT/Chk_Access/Chk_Access_DormQT.flow");
 import ("QT/Chk_Access/Chk_Access_PaulowniaMall.flow");
 import ("QT/Chk_Access/Chk_Access_IwatodaiStation.flow");
 import ("QT/Chk_Access/Chk_Access_PortIslandStation.flow");
-import ("QT/Chk_Access/Chk_Access_NaganakiShrine.flow");
-import ("QT/Chk_Access/Chk_Access_Godaigo.flow");
 import ("QT/Chk_Access/Chk_Access_Tartarus.flow");
 import ("QT/Chk_Access/Chk_Access_YakushimaBeach.flow");
 import ("QT/Chk_Access/Chk_Access_MoonlightBridge.flow");
+import ("QT/Chk_Access/Chk_Access_NaganakiShrine.flow");
+import ("QT/Open_Win/Open_YakushimaBeach_Win.flow");
+import ("QT/Open_Win/Open_MoonlightBridge_Win.flow");
 import ("QT/School.flow");
+import ("QT/Dorm.flow");
 import ("QT/Mall.flow");
 import ("QT/Iwatodai.flow");
-import ("QT/Open_Win/FES.msg");
+import ("QT/PortIsland.flow");
+import ("QT/Shrine.flow");
+import ("QT/Shrine.msg");
+import ("QT/Shared.msg");
+import ("QT/FESMall.flow");
+import ("QT/FES.msg");
 import ("QT/Chk_Access/Chk_Access.msg");
 import ("QuickTravel.msg");
 
@@ -24,16 +29,16 @@ void QuickTravelDisplay()
 	switch(GET_FIELD_MAJOR())
 	{
 		case 4: // Dorm (The Answer)
-			QuickTravel_Dorm_F();
+			FESDormTravel();
 			break;
 		case 5: // Paulownia Mall (The Answer)
-			QuickTravel_PaulowniaMall_F();
+			FESMallTravel();
 			break;
 		case 6: // Gekkoukan High
 			SchoolTravel();
 			break;
 		case 7: // Dorm
-			QuickTravel_Dorm();
+			DormTravel();
 			break;
 		case 8: // Paulownia Mall
 			MallTravel();
@@ -45,15 +50,15 @@ void QuickTravelDisplay()
 			PortIslandTravel();
 			break;
 		case 12: // Naganaki Shrine
-			QuickTravel_NaganakiShrine();
+			ShrineTravel();
 			break;
 		case 14: // Godaigo (Kyoto Trip)
-			QuickTravel_Godaigo();
+			No_QuickTravel();
 			break;
 		case 32: // Tartarus
 			if(GET_FLOOR_ID() == 1)
 			{
-				QuickTravel_Tartarus();
+				TartarusTravel();
 			}
 			else
 			{
@@ -80,14 +85,115 @@ void No_QuickTravel()
 	CLOSE_MSG_WIN();
 }
 
-void QuickTravel_Dorm_F()
+void No_Facilities()
 {
-	Open_Dorm_F_Win_010();
+	OPEN_MSG_WIN();
+	MSG( No_QT );
+	CLOSE_MSG_WIN();
 }
 
-void QuickTravel_PaulowniaMall_F()
+void FESDormTravel()
 {
-	Open_PaulowniaMall_F_Win_001();
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of1);
+	SEL_CHK_PAD( 6, 20 );
+	if( ( BIT_CHK( 721 ) == 0 ) && ( GET_FIELD_MINOR() == 10 ) )
+	{
+		SET_MASK( 9 );
+	}
+	else if( BIT_CHK( 721 ) == 0 )
+	{
+		SET_MASK( 10 );
+	}
+	else if( GET_FIELD_MINOR() == 10 )
+	{
+		SET_MASK( 1 );
+	}
+	else
+	{
+		SET_MASK( 2 );
+	}
+	int choice = SEL( Dorm_F );
+	CLOSE_MSG_WIN();
+	switch(choice)
+	{
+		
+		case 0: // 1F, Lobby
+			downstair_2f();
+			break;
+		case 1: // Desert of Doors
+			entrance_to_dungeon();
+			break;
+		case 2: // Velvet Room
+			entrance_to_velvetroom();
+			break;
+		case 3: // Paulownia Mall
+			counter_door();
+			break;
+		default:
+			break;
+	}
+}
+
+void FESMallTravel()
+{
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of1);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	//Open shops on Start
+	SEL_CHK_PAD(11,7);
+	int select = SEL( FESMall );
+	CLOSE_MSG_WIN();
+	switch (select)
+	{
+		case 0: // Iwatodai Dorm
+			return_to_dormitory();
+			break;
+		case 1: // Facilities
+			FESMallFacilities();
+			break;
+		case 7: //Shops (Start)
+			FESMallFacilities();
+			break;
+		default:
+			break;
+	}
+	return;
+}
+
+void FESMallFacilities()
+{
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of1);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	int select = SEL( FESMallFacilities );
+	CLOSE_MSG_WIN();
+	switch (select)
+	{
+		case 0: // FES Be blue V
+			FESMallAccessory();
+			break;
+		case 1: // FES Police Station
+			FESMallPolice();
+			break;
+		case 2: // FES Antique Store
+			FESMallAntique();
+			break;
+		case 3: // FES Drug Store
+			FESMallDrug();
+			break;
+		default:
+			break;
+	}
+	return;
 }
 
 void SchoolTravel()
@@ -270,7 +376,31 @@ int SchoolTravel3()
 	return 0;
 }
 
-void QuickTravel_Dorm()
+void DormTravel()
+{
+	bool selecting = true;
+	int page = 1;
+	while(selecting)
+	{
+		switch(page)
+		{	
+			case 0:
+				selecting = false;
+				break;
+			case 1:
+				page = DormTravel1();
+				break;
+			case 2:
+				page = DormTravel2();
+				break;
+			 default:
+				break;
+		}
+	}
+	return;
+}
+
+int DormTravel1()
 {
 	bool male = ( BIT_CHK( 3081 ) == 1 ) || ( BIT_CHK( 3082 ) == 1 );
 	bool female = ( BIT_CHK( 3084 ) == 1 ) || ( BIT_CHK( 3083 ) == 1 ); 
@@ -278,55 +408,108 @@ void QuickTravel_Dorm()
 	if( BIT_CHK( 3584 ) == 1 )
 	{
 		Chk_Access_Dorm_003_015_Junpei();
-		return;
+		return 0;
 	}
 	if(operation)
 	{
 		Chk_Access_Dorm_006_005();
-		return;
+		return 0;
 	}
-	switch(GET_FIELD_MINOR())
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of2);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	//Open map on Select
+	SEL_CHK_PAD(8,5);
+	//Open shop on Start
+	SEL_CHK_PAD(11,7);
+	//Next Page on D-Pad Right
+	SEL_CHK_PAD(13,3);
+	//Previous Page on D-Pad Left
+	SEL_CHK_PAD(15,4);
+	int select = SEL( Dorm );
+	CLOSE_MSG_WIN();
+	switch (select)
 	{
-		case 1: // Your Room
-			Open_Dorm_Win_001();
+		case 0: // Your Room
+			DormRoom();
 			break;
-		case 2: // 1F, Lounge
-			Open_Dorm_Win_002();
+		case 1: // Dorm Entrance
+			DormEntrance();
 			break;
-		case 3: // 2F, Hallway
-			Open_Dorm_Win_003();
+		case 2: // 1st Floor, Lounge
+			DormLobby();
 			break;
-		case 4: // 3F, Hallway
-			Open_Dorm_Win_004();
+		case 3: // 2nd Floor, Hallway
+			DormFloorTwo();
 			break;
-		case 5: // 4F, Hallway
-			Open_Dorm_Win_005();
+		case 4: // Next Page (D-Pad Right)
+			return 2;
 			break;
-		case 6: // Meeting Room
-			Open_Dorm_Win_006();
+		case 5: // Previous Page (D-Pad Left)
+			return 2;
 			break;
-		case 7: // 5F, Hallway
-			Open_Dorm_Win_007();
+		case 6: // Town Map (Select)
+			DormMap();
 			break;
-		case 9: // Dorm Entrance
-			Open_Dorm_Win_009();
+		case 7: //Facilities (Start)
+			No_Facilities();
+		default:
 			break;
-		case 14: // Vacant Room (Shinjiro)
-			Open_Dorm_Win_014();
-		case 15: // Vacant Room (Junpei, Ken, Fuuka, & Aigis)
-			if(male)
-			{
-				Open_Dorm_Win_015_Male();
-			}
-			else if(female)
-			{
-				Open_Dorm_Win_015_Female();
-			}
+	}
+	return 0;
+}
+
+int DormTravel2()
+{
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page2of2);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	//Open map on Select
+	SEL_CHK_PAD(8,6);
+	//Open shop on Start
+	SEL_CHK_PAD(11,7);
+	//Next Page on D-Pad Right
+	SEL_CHK_PAD(13,5);
+	//Previous Page on D-Pad Left
+	SEL_CHK_PAD(15,6);
+	int select = SEL( Dorm2 );
+	CLOSE_MSG_WIN();
+	switch (select)
+	{
+		case 0: // 3rd Floor, Hallway
+			DormFloorThree();
+			break;
+		case 1: // 4th Floor, Hallway
+			DormFloorFour();
+			break;
+		case 2: // Meeting Room
+			MeetingRoom();
+			break;
+		case 3: // Town Map
+			DormMap();
+			break;
+		case 4: // Next Page (D-Pad Right)
+			return 1;
+			break;
+		case 5: // Previous Page (D-Pad Left)
+			return 1;
+			break;
+		case 6: // Town Map (Select)
+			DormMap();
+			break;
+		case 7: //Facilities (Start)
+			No_Facilities();
 			break;
 		default:
-			No_QuickTravel();
 			break;
-		}
+	}
+	return 0;
 }
 
 void MallTravel()
@@ -372,6 +555,7 @@ void MallTravel()
 		default:
 			break;
 	}
+	return;
 }
 
 void MallFacilities()
@@ -554,7 +738,7 @@ int IwatodaiTravel1()
 	if(operation)
 	{
 		Chk_Access_IwatodaiStation_001_002();
-		return;
+		return 0;
 	}
 	OPEN_MSG_WIN();
 	MSG( Choose );
@@ -745,56 +929,80 @@ void PortFacilities()
 	return;
 }
 
-void QuickTravel_NaganakiShrine()
+void ShrineTravel()
 {
-	switch(GET_FIELD_MINOR())
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of1);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	//Open map on Select
+	SEL_CHK_PAD(8,6);
+	int select = SEL( Shrine );
+	CLOSE_MSG_WIN();
+	switch (select)
 	{
-		case 1: // Naganaki Shrine
-			Open_NaganakiShrine_Win_001();
+		case 0: // Offertory Box
+			Offering();
+			break;
+		case 1: // Fortune Draw
+			Fortune();
+			break;
+		case 2: // Sushi Shrine
+			Sushi();
+			break;
+		case 3: //Town Map
+			ShrineMap();
+			break;
+		case 6: // Town Map (Select)
+			ShrineMap();
 			break;
 		default:
-			No_QuickTravel();
 			break;
 	}
+	return;
 }
 
-void QuickTravel_Godaigo()
-{
-	switch(GET_FIELD_MINOR())
-	{
-		case 2: // 1F Lobby
-			Open_Godaigo_Win_002();
-			break;
-		case 3: // 2F Hallway
-			Open_Godaigo_Win_003();
-			break;
-		case 4: // 3F Hallway
-			Open_Godaigo_Win_004();
-			break;
-		case 7: // 3F Hallway
-			Open_Godaigo_Win_007();
-			break;
-		case 8: // 3F Hallway
-			Open_Godaigo_Win_008();
-			break;
-		case 9: // 3F Hallway
-			Open_Godaigo_Win_009();
-			break;
-		case 10: // 3F Hallway
-			Open_Godaigo_Win_010();
-			break;
-		default:
-			No_QuickTravel();
-			break;
-	}
-}
-
-void QuickTravel_Tartarus()
+void TartarusTravel()
 {
 	switch(GET_FIELD_MINOR())
 	{
 		case 2: // Tartarus, Entrance
-			Open_Tartarus_Win_002();
+			OPEN_MSG_WIN();
+			MSG( Choose );
+			FUNCTION_00B7(0);
+			FUNCTION_011C(12, Page1of1);
+			SEL_CHK_PAD( 6, 20 );
+			if (!( ( ( ( ( ( ( ( ( ( ( ( ( BIT_CHK( 3501 ) == 1 ) || ( BIT_CHK( 3504 ) == 1 ) ) || ( BIT_CHK( 3505 ) == 1 ) ) || ( BIT_CHK( 3506 ) == 1 ) ) || ( BIT_CHK( 3507 ) == 1 ) ) || ( BIT_CHK( 3508 ) == 1 ) ) || ( BIT_CHK( 3509 ) == 1 ) ) 
+			|| ( BIT_CHK( 3510 ) == 1 ) ) || ( BIT_CHK( 3511 ) == 1 ) ) || ( BIT_CHK( 3512 ) == 1 ) ) || ( BIT_CHK( 3513 ) == 1 ) ) || ( BIT_CHK( 3514 ) == 1 ) ) || ( BIT_CHK( 3515 ) == 1 ) ))
+			{
+				SET_MASK( 4 );
+			}
+			else if (!( ( ( ( ( ( ( ( ( ( ( ( ( ( BIT_CHK( 3516 ) == 1 ) || ( BIT_CHK( 3517 ) == 1 ) ) || ( BIT_CHK( 3518 ) == 1 ) ) || ( BIT_CHK( 3519 ) == 1 ) ) || ( BIT_CHK( 3528 ) == 1 ) ) || ( BIT_CHK( 3529 ) == 1 ) ) || ( BIT_CHK( 3530 ) == 1 ) ) 
+			|| ( BIT_CHK( 3531 ) == 1 ) ) || ( BIT_CHK( 3532 ) == 1 ) ) || ( BIT_CHK( 3533 ) == 1 ) ) || ( BIT_CHK( 3534 ) == 1 ) ) || ( BIT_CHK( 3535 ) == 1 ) ) || ( BIT_CHK( 3500 ) == 1 ) ) || ( BIT_CHK( 3499 ) == 1 ) ))
+			{
+			   SET_MASK( 4 );
+			}
+			int choice = SEL( Tartarus );
+			CLOSE_MSG_WIN();
+			switch(choice)
+			{
+				case 0:
+					start_exploration();
+					break;
+				case 1:
+					into_velvet_room();
+					break;
+				case 2:
+					warp_point();
+					break;
+				case 3:
+					get_out_here();
+					break;
+				default:
+					break;
+			}
 			break;
 		default:
 			No_QuickTravel();
@@ -805,4 +1013,9 @@ void QuickTravel_Tartarus()
 void QuickTravel_YakushimaBeach()
 {
 	Open_YakushimaBeach_Win_ALL();
+}
+
+void QuickTravel_MoonlightBridge()
+{
+	Open_MoonlightBridge_Win_001();
 }

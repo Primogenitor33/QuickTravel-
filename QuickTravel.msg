@@ -1,6 +1,9 @@
 [msg Choose]
 [f 0 8 -258][f 1 31]> Where would you like to go?[e]
 
+[msg TakeTime]
+[f 0 8 -258][f 1 31]> Using this Facility will take time.[n]Continue?[n][e]
+
 [sel School]
 [f 0 8 -258][f 1 31]School Entranceway[e]
 [f 0 8 -258][f 1 31]1st Floor, Main Lobby[e]
@@ -17,6 +20,18 @@
 [f 0 8 -258][f 1 31]Rooftop[e]
 [f 0 5 -258][f 1 31]Facilities[e]
 [f 0 8 -258][f 1 31]Town Map[e]
+
+[sel Dorm]
+[f 0 5 -258][f 1 31]Your Room[e]
+[f 0 5 -258][f 1 31]Dorm Entrance[e]
+[f 0 5 -258][f 1 31]1st Floor, Lounge[e]
+[f 0 5 -258][f 1 31]2nd Floor, Hallway[e]
+
+[sel Dorm2]
+[f 0 5 -258][f 1 31]3rd Floor, Hallway[e]
+[f 0 5 -258][f 1 31]4th Floor, Hallway[e]
+[f 0 5 -258][f 1 31]Meeting Room[e]
+[f 0 5 -258][f 1 31]Town Map[e]
 
 [sel Mall]
 [f 0 8 -258][f 1 31]Paulownia Mall[e]
@@ -64,6 +79,18 @@
 [sel PortFacilities]
 [f 0 8 -258][f 1 31]Rafflesia[e]
 [f 0 8 -258][f 1 31]Screen Shot[e]
+
+[sel Shrine]
+[f 0 8 65278][f 1 31]Offertory Box[e]
+[f 0 8 65278][f 1 31]Draw Fortune[e]
+[f 0 8 65278][f 1 31]Inari Sushi Prayer Shrine[e]
+[f 0 8 65278][f 1 31]Town map[e]
+
+[sel Tartarus top]
+[f 0 8 65278][f 1 31]Thebel[e]
+[f 0 8 65278][f 1 31]Velvet Room[e]
+[f 0 8 65278][f 1 31]Teleporter[e]
+[f 0 8 65278][f 1 31]Outside[e]
 
 [msg No_QT]
 [f 0 8 -258][f 1 31]You can't Quick Travel here.[n][f 0 4][e]

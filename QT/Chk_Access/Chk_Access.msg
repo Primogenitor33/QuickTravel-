@@ -425,3 +425,6 @@
 [sel BATTLE_SEL top]
 [f 0 8 65278][f 1 31]"Ready."[e]
 [f 0 8 65278][f 1 31]"Hold on."[e]
+
+[msg MyRoomQT]
+[f 0 8 65278][f 1 31]> Quick Traveling to your room will change the time of day.[n]Continue?[n][f 0 4][e]

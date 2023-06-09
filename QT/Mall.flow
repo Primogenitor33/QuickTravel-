@@ -189,14 +189,14 @@ void gotoMallVelvet()
 			}
 			else 
 			{
-				into_velvet_room();
+				mall_velvet_room();
 			}
 		}
 	}
 	return;
 }
 
-void into_velvet_room()
+void mall_velvet_room()
 {
 	BIT_ON( 3072 );
 	FADE( 6, 30 );
