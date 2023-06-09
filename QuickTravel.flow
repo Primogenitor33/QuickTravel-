@@ -83,13 +83,15 @@ void No_QuickTravel()
 	OPEN_MSG_WIN();
 	MSG( No_QT );
 	CLOSE_MSG_WIN();
+	return;
 }
 
 void No_Facilities()
 {
 	OPEN_MSG_WIN();
-	MSG( No_QT );
+	MSG( No_Facilities );
 	CLOSE_MSG_WIN();
+	return;
 }
 
 void FESDormTravel()
