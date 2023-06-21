@@ -424,13 +424,13 @@ int DormTravel1()
 	//Close menu on Circle
 	SEL_CHK_PAD(6,20);
 	//Open map on Select
-	SEL_CHK_PAD(8,5);
+	SEL_CHK_PAD(8,6);
 	//Open shop on Start
 	SEL_CHK_PAD(11,7);
 	//Next Page on D-Pad Right
-	SEL_CHK_PAD(13,3);
+	SEL_CHK_PAD(13,4);
 	//Previous Page on D-Pad Left
-	SEL_CHK_PAD(15,4);
+	SEL_CHK_PAD(15,5);
 	int select = SEL( Dorm );
 	CLOSE_MSG_WIN();
 	switch (select)
@@ -477,9 +477,9 @@ int DormTravel2()
 	//Open shop on Start
 	SEL_CHK_PAD(11,7);
 	//Next Page on D-Pad Right
-	SEL_CHK_PAD(13,5);
+	SEL_CHK_PAD(13,4);
 	//Previous Page on D-Pad Left
-	SEL_CHK_PAD(15,6);
+	SEL_CHK_PAD(15,5);
 	int select = SEL( Dorm2 );
 	CLOSE_MSG_WIN();
 	switch (select)
