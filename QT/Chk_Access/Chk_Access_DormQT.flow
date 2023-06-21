@@ -220,6 +220,8 @@ bool Chk_Access_Dorm_003_001() // ( 7, 1, 0, 0 )
 			BIT_ON( 3086 );
 		}
 		FUNCTION_0186( 15 );
+		FADE( 1, 0 );
+		FADE_SYNC();
 		if ( ( GET_MONTH() == 4 ) && ( GET_DAY_OF_MONTH() == 7 ) )
 		{
 			BIT_ON( 9 );
