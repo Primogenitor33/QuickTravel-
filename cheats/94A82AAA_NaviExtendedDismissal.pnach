@@ -1,5 +1,5 @@
 gametitle=Shin Megami Tensei: Persona 3 FES (U)(SLUS-21621)
-comment=Dismiss Textboxes on Left, Right, Start, Select (Mainly for Navi). Also speeds up the navi message
+comment=##DEPRECATED DO NOT USE##Dismiss Textboxes on Left, Right, Start, Select (Mainly for Navi). Also speeds up the navi message. 
 author=Alexankitty
 patch=1,EE,003A9434,word,28630007 //Fix navi message speed
 patch=1,EE,003a71bc,word,0819e490 //Jump for more execute space

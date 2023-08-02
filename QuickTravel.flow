@@ -129,6 +129,7 @@ void FESDormTravel()
 		SET_MASK( 2 );
 	}
 	int choice = SEL( Dorm_F );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch(choice)
 	{
@@ -165,6 +166,7 @@ void FESMallTravel()
 	//Open shops on Start
 	SEL_CHK_PAD(11,7);
 	int select = SEL( FESMall );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -192,6 +194,7 @@ void FESMallFacilities()
 	//Close menu on Circle
 	SEL_CHK_PAD(6,20);
 	int select = SEL( FESMallFacilities );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -273,6 +276,7 @@ int SchoolTravel1()
 	//Previous Page on D-Pad Left
 	SEL_CHK_PAD(15,5);
 	int select = SEL( School );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -321,6 +325,7 @@ int SchoolTravel2()
 	//Previous Page on D-Pad Left
 	SEL_CHK_PAD(15,5);
 	int select = SEL( School2 );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -369,6 +374,7 @@ int SchoolTravel3()
 	//Previous Page on D-Pad Left
 	SEL_CHK_PAD(15,5);
 	int select = SEL( School3 );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -460,6 +466,7 @@ int DormTravel1()
 	//Previous Page on D-Pad Left
 	SEL_CHK_PAD(15,5);
 	int select = SEL( Dorm );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -509,6 +516,7 @@ int DormTravel2()
 	//Previous Page on D-Pad Left
 	SEL_CHK_PAD(15,5);
 	int select = SEL( Dorm2 );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -555,6 +563,7 @@ void DormTravelEntrance()
 	//Open shop on Start
 	SEL_CHK_PAD(11,7);
 	int select = SEL( DormEntrance );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -599,6 +608,7 @@ void MallTravel()
 	//Open shops on Start
 	SEL_CHK_PAD(11,7);
 	int select = SEL( Mall );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -668,6 +678,7 @@ int MallFacilities1()
 	//Previous Page on D-Pad Left
 	SEL_CHK_PAD(15,5);
 	int select = SEL( MallFacilities );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -711,6 +722,7 @@ int MallFacilities2()
 	//Previous Page on D-Pad Left
 	SEL_CHK_PAD(15,5);
 	int select = SEL( MallFacilities2 );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -754,6 +766,7 @@ int MallFacilities3()
 	//Previous Page on D-Pad Left
 	SEL_CHK_PAD(15,5);
 	int select = SEL( MallFacilities3 );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -827,6 +840,7 @@ int IwatodaiTravel1()
 	//Previous Page on D-Pad Left
 	SEL_CHK_PAD(15,5);
 	int select = SEL( Iwatodai );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -872,6 +886,7 @@ int IwatodaiTravel2()
 	//Previous Page on D-Pad Left
 	SEL_CHK_PAD(15,5);
 	int select = SEL( Iwatodai2 );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -908,6 +923,7 @@ void IwatodaiFacilities()
 	//Open map on Select
 	SEL_CHK_PAD(8,6);
 	int select = SEL( IwatodaiFacilities );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -949,6 +965,7 @@ void PortIslandTravel()
 	//Open shops on Start
 	SEL_CHK_PAD(11,7);
 	int select = SEL( PortIsland );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -987,6 +1004,7 @@ void PortFacilities()
 	//Open map on Select
 	SEL_CHK_PAD(8,6);
 	int select = SEL( PortFacilities );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -1020,6 +1038,7 @@ void ShrineTravel()
 	//Open map on Select
 	SEL_CHK_PAD(8,6);
 	int select = SEL( Shrine );
+	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
 	{
@@ -1069,6 +1088,7 @@ void TartarusTravel()
 			   SET_MASK( 4 );
 			}
 			int choice = SEL( Tartarus );
+			FUNCTION_0005();
 			CLOSE_MSG_WIN();
 			switch(choice)
 			{
