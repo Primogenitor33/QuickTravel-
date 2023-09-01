@@ -5,7 +5,7 @@ void IwatodaiStation()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // Iwatodai Strip, Ground Floor
-			if(Chk_Access_IwatodaiStation_001_002())
+			if(ChkIwa001_002())
 			{
 				gotoIwatodaiStation();
 			}
@@ -16,9 +16,9 @@ void IwatodaiStation()
 			CLOSE_MSG_WIN();
 			break;
 		case 7: // Iwatodai Strip, Upper Floor
-			if(Chk_Access_IwatodaiStation_007_001())
+			if(ChkIwa007_001())
 			{
-				if(Chk_Access_IwatodaiStation_001_002())
+				if(ChkIwa001_002())
 				{
 					gotoIwatodaiStation();
 				}
@@ -49,13 +49,13 @@ void IwatodaiGroundFloor()
 			CLOSE_MSG_WIN();
 			break;
 		case 2: // Iwatodai Station
-			if(Chk_Access_IwatodaiStation_002_001())
+			if(ChkIwa002_001())
 			{
 				gotoIwatodaiGroundFloor();
 			}
 			break;
 		case 7: // Iwatodai Strip, Upper Floor
-			if(Chk_Access_IwatodaiStation_007_001())
+			if(ChkIwa007_001())
 			{
 				gotoIwatodaiGroundFloor();
 			}
@@ -80,15 +80,15 @@ void IwatodaiUpperFloor()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // Iwatodai Strip, Ground Floor
-			if(Chk_Access_IwatodaiStation_001_007())
+			if(ChkIwa001_007())
 			{
 				gotoIwatodaiUpperFloor();
 			}
 			break;
 		case 2: // Iwatodai Station
-			if(Chk_Access_IwatodaiStation_002_001())
+			if(ChkIwa002_001())
 			{
-				if(Chk_Access_IwatodaiStation_001_007())
+				if(ChkIwa001_007())
 				{
 					gotoIwatodaiUpperFloor();
 				}
@@ -119,21 +119,21 @@ void IwatodaiMap()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // Iwatodai Strip, Ground Floor
-			if(Chk_Access_IwatodaiStation_001_MAP())
+			if(ChkIwa001_MAP())
 			{
 				gotoIwatodaiMap();
 			}
 			break;
 		case 2: // Iwatodai Station
-			if(Chk_Access_IwatodaiStation_002_MAP())
+			if(ChkIwa002_MAP())
 			{
 				gotoIwatodaiMap();
 			}
 			break;
 		case 7: // Iwatodai Strip, Upper Floor
-			if(Chk_Access_IwatodaiStation_001_007())
+			if(ChkIwa001_007())
 			{
-				if(Chk_Access_IwatodaiStation_001_MAP())
+				if(ChkIwa001_MAP())
 				{
 					gotoIwatodaiMap();
 				}
@@ -159,15 +159,15 @@ void WildDuck()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // Iwatodai Strip, Ground Floor
-			if(Chk_Access_IwatodaiStation_001_007())
+			if(ChkIwa001_007())
 			{
 				gotoWildDuck();
 			}
 			break;
 		case 2: // Iwatodai Station
-			if(Chk_Access_IwatodaiStation_002_001())
+			if(ChkIwa002_001())
 			{
-				if(Chk_Access_IwatodaiStation_001_007())
+				if(ChkIwa001_007())
 				{
 					gotoWildDuck();
 				}
@@ -275,15 +275,15 @@ void Wakatsu()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // Iwatodai Strip, Ground Floor
-			if(Chk_Access_IwatodaiStation_001_007())
+			if(ChkIwa001_007())
 			{
 				gotoWakatsu();
 			}
 			break;
 		case 2: // Iwatodai Station
-			if(Chk_Access_IwatodaiStation_002_001())
+			if(ChkIwa002_001())
 			{
-				if(Chk_Access_IwatodaiStation_001_007())
+				if(ChkIwa001_007())
 				{
 					gotoWakatsu();
 				}
@@ -372,15 +372,15 @@ void Hagakure()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // Iwatodai Strip, Ground Floor
-			if(Chk_Access_IwatodaiStation_001_007())
+			if(ChkIwa001_007())
 			{
 				gotoHagakure();
 			}
 			break;
 		case 2: // Iwatodai Station
-			if(Chk_Access_IwatodaiStation_002_001())
+			if(ChkIwa002_001())
 			{
-				if(Chk_Access_IwatodaiStation_001_007())
+				if(ChkIwa001_007())
 				{
 					gotoHagakure();
 				}
@@ -473,13 +473,13 @@ void Octopia()
 			gotoOctopia();
 			break;
 		case 2: // Iwatodai Station
-			if(Chk_Access_IwatodaiStation_002_001())
+			if(ChkIwa002_001())
 			{
 				gotoOctopia();
 			}
 			break;
 		case 7: // Iwatodai Strip, Upper Floor
-			if(Chk_Access_IwatodaiStation_007_001())
+			if(ChkIwa007_001())
 			{
 				gotoOctopia();
 			}

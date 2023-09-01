@@ -66,10 +66,10 @@ void QuickTravelDisplay()
 			}
 			break;
 		case 33: // Yakushima Beach
-			QuickTravel_YakushimaBeach();
+			YakushimaTravel();
 			break;
 		case 37: // Moonlight Bridge
-			QuickTravel_MoonlightBridge();
+			MoonlightTravel();
 			break;
 		default:
 			field_order_party_unhooked();
@@ -254,7 +254,7 @@ int SchoolTravel1()
 	}
 	else if( BIT_CHK( 3680 ) == 1 )
 	{
-		Chk_Access_GekkoukanHigh_004_005();
+		ChkGek004_005();
 		return 0;
 	}
 	if ( BIT_CHK( 9999 ) == 0 )
@@ -439,12 +439,12 @@ int DormTravel1()
 	bool operation = ( FUNCTION_0083() == 8 ) && ( ( ( GET_MONTH() == 7 ) && ( GET_DAY_OF_MONTH() == 7 ) ) || ( ( GET_MONTH() == 11 ) && ( GET_DAY_OF_MONTH() == 3 ) ) || ( ( GET_MONTH() == 11 ) && ( GET_DAY_OF_MONTH() == 22 ) ) );
 	if( BIT_CHK( 3584 ) == 1 )
 	{
-		Chk_Access_Dorm_003_015_Junpei();
+		ChkDorm003_015_Junpei();
 		return 0;
 	}
 	if(operation)
 	{
-		Chk_Access_Dorm_006_005();
+		ChkDorm006_005();
 		return 0;
 	}
 	if ( BIT_CHK( 9999 ) == 0 )
@@ -590,7 +590,7 @@ void MallTravel()
 	bool operation = ( GET_MONTH() == 9 ) && ( GET_DAY_OF_MONTH() == 5 ) && ( FUNCTION_0083() == 8 );
 	if(operation)
 	{
-		Chk_Access_PaulowniaMall_001_002();
+		ChkPaul001_002();
 		return;
 	}
 	if ( BIT_CHK( 9999 ) == 0 )
@@ -818,7 +818,7 @@ int IwatodaiTravel1()
 	bool operation = ( GET_MONTH() == 10 ) && ( GET_DAY_OF_MONTH() == 4 ) && ( FUNCTION_0083() == 8 );
 	if(operation)
 	{
-		Chk_Access_IwatodaiStation_001_002();
+		ChkIwa001_002();
 		return 0;
 	}
 	if ( BIT_CHK( 9999 ) == 0 )
@@ -1114,12 +1114,12 @@ void TartarusTravel()
 	}
 }
 
-void QuickTravel_YakushimaBeach()
+void YakushimaTravel()
 {
-	Open_YakushimaBeach_Win_ALL();
+	OpenYakushimaWin_ALL();
 }
 
-void QuickTravel_MoonlightBridge()
+void MoonlightTravel()
 {
-	Open_MoonlightBridge_Win_001();
+	OpenMoonlightWin_001();
 }

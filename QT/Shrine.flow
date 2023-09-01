@@ -1655,7 +1655,7 @@ void Sushi()
 
 void ShrineMap()
 {
-	if(Chk_Access_NaganakiShrine_001_MAP())
+	if(ChkNaga001_MAP())
 	{
 		FADE( 1, 0 );
 		FADE_SYNC();

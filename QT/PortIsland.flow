@@ -10,7 +10,7 @@ void PortStation()
 			CLOSE_MSG_WIN();
 			break;
 		case 2: // Port Island Station Outskirts
-			if(Chk_Access_PortIslandStation_002_001())
+			if(ChkPort002_001())
 			{
 				gotoPortStation();
 			}
@@ -35,7 +35,7 @@ void PortOutskirts()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // Port Island Station
-			if(Chk_Access_PortIslandStation_001_002())
+			if(ChkPort001_002())
 			{
 				gotoPortOutskirts();
 			}
@@ -65,13 +65,13 @@ void PortMap()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // Port Island Station
-			if(Chk_Access_PortIslandStation_001_MAP())
+			if(ChkPort001_MAP())
 			{
 				gotoPortMap();
 			}
 			break;
 		case 2: // Port Island Station Outskirts
-			if(Chk_Access_PortIslandStation_002_MAP())
+			if(ChkPort002_MAP())
 			{
 				gotoPortMap();
 			}
@@ -99,7 +99,7 @@ void FlowerShop()
 			gotoFlowerShop();
 			break;
 		case 2: // Port Island Station Outskirts
-			if(Chk_Access_PortIslandStation_002_001())
+			if(ChkPort002_001())
 			{
 				gotoFlowerShop();
 			}
@@ -245,7 +245,7 @@ void PortTheater()
 			gotoPortTheater();
 			break;
 		case 2: // Port Island Station Outskirts
-			if(Chk_Access_PortIslandStation_002_001())
+			if(ChkPort002_001())
 			{
 				gotoPortTheater();
 			}

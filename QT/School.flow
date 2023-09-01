@@ -5,7 +5,7 @@ void SchoolEntrance()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // 1F, Main Lobby
-			if(Chk_Access_GekkoukanHigh_001_002())
+			if(ChkGek001_002())
 			{
 				gotoSchoolEntrance();
 			}
@@ -16,11 +16,11 @@ void SchoolEntrance()
 			CLOSE_MSG_WIN();
 			break;
 		case 3: //Classroom 2-F
-			if(Chk_Access_GekkoukanHigh_003_004())
+			if(ChkGek003_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_001())
+				if(ChkGek004_001())
 				{
-					if(Chk_Access_GekkoukanHigh_001_002())
+					if(ChkGek001_002())
 					{
 						gotoSchoolEntrance();
 					}
@@ -28,20 +28,20 @@ void SchoolEntrance()
 			}
 			break;
 		case 4: // 2F, Hallway
-			if(Chk_Access_GekkoukanHigh_004_001())
+			if(ChkGek004_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_002())
+				if(ChkGek001_002())
 				{
 					gotoSchoolEntrance();
 				}
 			}
 			break;
 		case 5: // Rooftop
-			if(Chk_Access_GekkoukanHigh_005_004())
+			if(ChkGek005_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_001())
+				if(ChkGek004_001())
 				{
-					if(Chk_Access_GekkoukanHigh_001_002())
+					if(ChkGek001_002())
 					{
 						gotoSchoolEntrance();
 					}
@@ -49,29 +49,29 @@ void SchoolEntrance()
 			}
 			break;
 		case 7: // 1F, Faculty Office Hallway
-			if(Chk_Access_GekkoukanHigh_007_001())
+			if(ChkGek007_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_002())
+				if(ChkGek001_002())
 				{
 					gotoSchoolEntrance();
 				}
 			}
 			break;
 		case 11: // 1F, Laboratory Hallway
-			if(Chk_Access_GekkoukanHigh_011_001())
+			if(ChkGek011_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_002())
+				if(ChkGek001_002())
 				{
 					gotoSchoolEntrance();
 				}
 			}
 			break;
 		case 16: // 1F, Corridor
-			if(Chk_Access_GekkoukanHigh_016_011())
+			if(ChkGek016_011())
 			{
-				if(Chk_Access_GekkoukanHigh_011_001())
+				if(ChkGek011_001())
 				{
-					if(Chk_Access_GekkoukanHigh_001_002())
+					if(ChkGek001_002())
 					{
 						gotoSchoolEntrance();
 					}
@@ -79,13 +79,13 @@ void SchoolEntrance()
 			}
 			break;
 		case 20: // 1F, Sport Clubs Hallway
-			if(Chk_Access_GekkoukanHigh_020_016())
+			if(ChkGek020_016())
 			{
-				if(Chk_Access_GekkoukanHigh_016_011())
+				if(ChkGek016_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_001())
+					if(ChkGek011_001())
 					{
-						if(Chk_Access_GekkoukanHigh_001_002())
+						if(ChkGek001_002())
 						{
 							gotoSchoolEntrance();
 						}
@@ -118,62 +118,62 @@ void SchoolLobby()
 			CLOSE_MSG_WIN();
 			break;
 		case 2: //School Entrance
-			if(Chk_Access_GekkoukanHigh_002_001())
+			if(ChkGek002_001())
 			{
 				gotoSchoolLobby();
 			}
 			break;
 		case 3: //Classroom 2-F
-			if(Chk_Access_GekkoukanHigh_003_004())
+			if(ChkGek003_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_001())
+				if(ChkGek004_001())
 				{
 					gotoSchoolLobby();
 				}
 			}
 			break;
 		case 4: // 2F, Hallway
-			if(Chk_Access_GekkoukanHigh_004_001())
+			if(ChkGek004_001())
 			{
 				gotoSchoolLobby();
 			}
 			break;
 		case 5: // Rooftop
-			if(Chk_Access_GekkoukanHigh_005_004())
+			if(ChkGek005_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_001())
+				if(ChkGek004_001())
 				{
 					gotoSchoolLobby();
 				}
 			}
 			break;
 		case 7: // 1F, Faculty Office Hallway
-			if(Chk_Access_GekkoukanHigh_007_001())
+			if(ChkGek007_001())
 			{
 				gotoSchoolLobby();
 			}
 			break;
 		case 11: // 1F, Laboratory Hallway
-			if(Chk_Access_GekkoukanHigh_011_001())
+			if(ChkGek011_001())
 			{
 				gotoSchoolLobby();
 			}
 			break;
 		case 16: // 1F, Corridor
-			if(Chk_Access_GekkoukanHigh_016_011())
+			if(ChkGek016_011())
 			{
-				if(Chk_Access_GekkoukanHigh_011_001())
+				if(ChkGek011_001())
 				{
 						gotoSchoolLobby();
 				}
 			}
 			break;
 		case 20: // 1F, Sport Clubs Hallway
-			if(Chk_Access_GekkoukanHigh_020_016())
+			if(ChkGek020_016())
 			{
-				if(Chk_Access_GekkoukanHigh_016_011())
+				if(ChkGek016_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_001())
+					if(ChkGek011_001())
 					{
 							gotoSchoolLobby();
 					}
@@ -200,26 +200,26 @@ void SchoolFacultyHall()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // 1F, Main Lobby
-			if(Chk_Access_GekkoukanHigh_001_007())
+			if(ChkGek001_007())
 			{
 				gotoSchoolFacultyHall();
 			}
 			break;
 		case 2: //School Entrance
-			if(Chk_Access_GekkoukanHigh_002_001())
+			if(ChkGek002_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_007())
+				if(ChkGek001_007())
 				{
 					gotoSchoolFacultyHall();
 				}
 			}
 			break;
 		case 3: //Classroom 2-F
-			if(Chk_Access_GekkoukanHigh_003_004())
+			if(ChkGek003_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_001())
+				if(ChkGek004_001())
 				{
-					if(Chk_Access_GekkoukanHigh_001_007())
+					if(ChkGek001_007())
 					{
 						gotoSchoolFacultyHall();
 					}
@@ -227,20 +227,20 @@ void SchoolFacultyHall()
 			}
 			break;
 		case 4: // 2F, Hallway
-			if(Chk_Access_GekkoukanHigh_004_001())
+			if(ChkGek004_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_007())
+				if(ChkGek001_007())
 				{
 					gotoSchoolFacultyHall();
 				}
 			}
 			break;
 		case 5: // Rooftop
-			if(Chk_Access_GekkoukanHigh_005_004())
+			if(ChkGek005_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_001())
+				if(ChkGek004_001())
 				{
-					if(Chk_Access_GekkoukanHigh_001_007())
+					if(ChkGek001_007())
 					{
 						gotoSchoolFacultyHall();
 					}
@@ -253,20 +253,20 @@ void SchoolFacultyHall()
 			CLOSE_MSG_WIN();
 			break;
 		case 11: // 1F, Laboratory Hallway
-			if(Chk_Access_GekkoukanHigh_011_001())
+			if(ChkGek011_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_007())
+				if(ChkGek001_007())
 				{
 					gotoSchoolFacultyHall();
 				}
 			}
 			break;
 		case 16: // 1F, Corridor
-			if(Chk_Access_GekkoukanHigh_016_011())
+			if(ChkGek016_011())
 			{
-				if(Chk_Access_GekkoukanHigh_011_001())
+				if(ChkGek011_001())
 				{
-					if(Chk_Access_GekkoukanHigh_001_007())
+					if(ChkGek001_007())
 					{
 						gotoSchoolFacultyHall();
 					}
@@ -274,13 +274,13 @@ void SchoolFacultyHall()
 			}
 			break;
 		case 20: // 1F, Sport Clubs Hallway
-			if(Chk_Access_GekkoukanHigh_020_016())
+			if(ChkGek020_016())
 			{
-				if(Chk_Access_GekkoukanHigh_016_011())
+				if(ChkGek016_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_001())
+					if(ChkGek011_001())
 					{
-						if(Chk_Access_GekkoukanHigh_001_007())
+						if(ChkGek001_007())
 						{
 							gotoSchoolFacultyHall();
 						}
@@ -308,48 +308,48 @@ void SchoolLaboratoryHall()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // 1F, Main Lobby
-			if(Chk_Access_GekkoukanHigh_001_011())
+			if(ChkGek001_011())
 			{
 				gotoSchoolLaboratoryHall();
 			}
 			break;
 		case 2: //School Entrance
-			if(Chk_Access_GekkoukanHigh_002_001())
+			if(ChkGek002_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_011())
+				if(ChkGek001_011())
 				{
 					gotoSchoolLaboratoryHall();
 				}
 			}
 			break;
 		case 3: //Classroom 2-F
-			if(Chk_Access_GekkoukanHigh_003_004())
+			if(ChkGek003_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_011())
+				if(ChkGek004_011())
 				{
 					gotoSchoolLaboratoryHall();
 				}
 			}
 			break;
 		case 4: // 2F, Hallway
-			if(Chk_Access_GekkoukanHigh_004_011())
+			if(ChkGek004_011())
 			{
 				gotoSchoolLaboratoryHall();
 			}
 			break;
 		case 5: // Rooftop
-			if(Chk_Access_GekkoukanHigh_005_004())
+			if(ChkGek005_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_011())
+				if(ChkGek004_011())
 				{
 					gotoSchoolLaboratoryHall();
 				}
 			}
 			break;
 		case 7: // 1F, Faculty Office Hallway
-			if(Chk_Access_GekkoukanHigh_007_001())
+			if(ChkGek007_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_011())
+				if(ChkGek001_011())
 				{
 					gotoSchoolLaboratoryHall();
 				}
@@ -361,15 +361,15 @@ void SchoolLaboratoryHall()
 			CLOSE_MSG_WIN();
 			break;
 		case 16: // 1F, Corridor
-			if(Chk_Access_GekkoukanHigh_016_011())
+			if(ChkGek016_011())
 			{
 				gotoSchoolLaboratoryHall();
 			}
 			break;
 		case 20: // 1F, Sport Clubs Hallway
-			if(Chk_Access_GekkoukanHigh_020_016())
+			if(ChkGek020_016())
 			{
-				if(Chk_Access_GekkoukanHigh_016_011())
+				if(ChkGek016_011())
 				{
 					gotoSchoolLaboratoryHall();
 				}
@@ -395,20 +395,20 @@ void SchoolCorridor()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // 1F, Main Lobby
-			if(Chk_Access_GekkoukanHigh_001_011())
+			if(ChkGek001_011())
 			{
-				if(Chk_Access_GekkoukanHigh_011_016())
+				if(ChkGek011_016())
 				{
 					gotoSchoolCorridor();
 				}
 			}
 			break;
 		case 2: //School Entrance
-			if(Chk_Access_GekkoukanHigh_002_001())
+			if(ChkGek002_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_011())
+				if(ChkGek001_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_016())
+					if(ChkGek011_016())
 					{
 						gotoSchoolCorridor();
 					}
@@ -416,11 +416,11 @@ void SchoolCorridor()
 			}
 			break;
 		case 3: //Classroom 2-F
-			if(Chk_Access_GekkoukanHigh_003_004())
+			if(ChkGek003_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_011())
+				if(ChkGek004_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_016())
+					if(ChkGek011_016())
 					{
 						gotoSchoolCorridor();
 					}
@@ -428,20 +428,20 @@ void SchoolCorridor()
 			}
 			break;
 		case 4: // 2F, Hallway
-			if(Chk_Access_GekkoukanHigh_004_011())
+			if(ChkGek004_011())
 			{
-				if(Chk_Access_GekkoukanHigh_011_016())
+				if(ChkGek011_016())
 				{
 					gotoSchoolCorridor();
 				}
 			}
 			break;
 		case 5: // Rooftop
-			if(Chk_Access_GekkoukanHigh_005_004())
+			if(ChkGek005_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_011())
+				if(ChkGek004_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_016())
+					if(ChkGek011_016())
 					{
 						gotoSchoolCorridor();
 					}
@@ -449,11 +449,11 @@ void SchoolCorridor()
 			}
 			break;
 		case 7: // 1F, Faculty Office Hallway
-			if(Chk_Access_GekkoukanHigh_007_001())
+			if(ChkGek007_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_011())
+				if(ChkGek001_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_016())
+					if(ChkGek011_016())
 					{
 						gotoSchoolCorridor();
 					}
@@ -461,7 +461,7 @@ void SchoolCorridor()
 			}
 			break;
 		case 11: // 1F, aboratory Hallway
-			if(Chk_Access_GekkoukanHigh_011_016())
+			if(ChkGek011_016())
 			{
 				gotoSchoolCorridor();
 			}
@@ -472,7 +472,7 @@ void SchoolCorridor()
 			CLOSE_MSG_WIN();
 			break;
 		case 20: // 1F, Sport Clubs Hallway
-			if(Chk_Access_GekkoukanHigh_020_016())
+			if(ChkGek020_016())
 			{
 				gotoSchoolCorridor();
 			}
@@ -497,11 +497,11 @@ void SchoolSportsHall()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // 1F, Main Lobby
-			if(Chk_Access_GekkoukanHigh_001_011())
+			if(ChkGek001_011())
 			{
-				if(Chk_Access_GekkoukanHigh_011_016())
+				if(ChkGek011_016())
 				{
-					if(Chk_Access_GekkoukanHigh_016_020())
+					if(ChkGek016_020())
 					{
 						gotoSchoolSportsHall();
 					}
@@ -509,13 +509,13 @@ void SchoolSportsHall()
 			}
 			break;
 		case 2: //School Entrance
-			if(Chk_Access_GekkoukanHigh_002_001())
+			if(ChkGek002_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_011())
+				if(ChkGek001_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_016())
+					if(ChkGek011_016())
 					{
-						if(Chk_Access_GekkoukanHigh_016_020())
+						if(ChkGek016_020())
 						{
 							gotoSchoolSportsHall();
 						}
@@ -524,13 +524,13 @@ void SchoolSportsHall()
 			}
 			break;
 		case 3: //Classroom 2-F
-			if(Chk_Access_GekkoukanHigh_003_004())
+			if(ChkGek003_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_011())
+				if(ChkGek004_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_016())
+					if(ChkGek011_016())
 					{
-						if(Chk_Access_GekkoukanHigh_016_020())
+						if(ChkGek016_020())
 						{
 							gotoSchoolSportsHall();
 						}
@@ -539,11 +539,11 @@ void SchoolSportsHall()
 			}
 			break;
 		case 4: // 2F, Hallway
-			if(Chk_Access_GekkoukanHigh_004_011())
+			if(ChkGek004_011())
 			{
-				if(Chk_Access_GekkoukanHigh_011_016())
+				if(ChkGek011_016())
 				{
-					if(Chk_Access_GekkoukanHigh_016_020())
+					if(ChkGek016_020())
 					{
 						gotoSchoolSportsHall();
 					}
@@ -551,13 +551,13 @@ void SchoolSportsHall()
 			}
 			break;
 		case 5: // Rooftop
-			if(Chk_Access_GekkoukanHigh_005_004())
+			if(ChkGek005_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_011())
+				if(ChkGek004_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_016())
+					if(ChkGek011_016())
 					{
-						if(Chk_Access_GekkoukanHigh_016_020())
+						if(ChkGek016_020())
 						{
 							gotoSchoolSportsHall();
 						}
@@ -566,13 +566,13 @@ void SchoolSportsHall()
 			}
 			break;
 		case 7: // 1F, Faculty Office Hallway
-			if(Chk_Access_GekkoukanHigh_007_001())
+			if(ChkGek007_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_011())
+				if(ChkGek001_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_016())
+					if(ChkGek011_016())
 					{
-						if(Chk_Access_GekkoukanHigh_016_020())
+						if(ChkGek016_020())
 						{
 							gotoSchoolSportsHall();
 						}
@@ -581,16 +581,16 @@ void SchoolSportsHall()
 			}
 			break;
 		case 11: // 1F, Laboratory Hallway
-			if(Chk_Access_GekkoukanHigh_011_016())
+			if(ChkGek011_016())
 			{
-				if(Chk_Access_GekkoukanHigh_016_020())
+				if(ChkGek016_020())
 				{
 					gotoSchoolSportsHall();
 				}
 			}
 			break;
 		case 16: // 1F, Corridor
-			if(Chk_Access_GekkoukanHigh_016_020())
+			if(ChkGek016_020())
 			{
 				gotoSchoolSportsHall();
 			}
@@ -620,22 +620,22 @@ void SchoolSecondHall()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // 1F, Main Lobby
-			if(Chk_Access_GekkoukanHigh_001_004())
+			if(ChkGek001_004())
 			{
 				gotoSchoolSecondHall();
 			}
 			break;
 		case 2: //School Entrance
-			if(Chk_Access_GekkoukanHigh_002_001())
+			if(ChkGek002_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_004())
+				if(ChkGek001_004())
 				{
 					gotoSchoolSecondHall();
 				}
 			}
 			break;
 		case 3: //Classroom 2-F
-			if(Chk_Access_GekkoukanHigh_003_004())
+			if(ChkGek003_004())
 			{
 				gotoSchoolSecondHall();
 			}
@@ -646,41 +646,41 @@ void SchoolSecondHall()
 			CLOSE_MSG_WIN();
 			break;
 		case 5: // Rooftop
-			if(Chk_Access_GekkoukanHigh_005_004())
+			if(ChkGek005_004())
 			{
 				gotoSchoolSecondHall();
 			}
 			break;
 		case 7: // 1F, Faculty Office Hallway
-			if(Chk_Access_GekkoukanHigh_007_001())
+			if(ChkGek007_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_004())
+				if(ChkGek001_004())
 				{
 					gotoSchoolSecondHall();
 				}
 			}
 			break;
 		case 11: // 1F, Laboratory Hallway
-			if(Chk_Access_GekkoukanHigh_011_004())
+			if(ChkGek011_004())
 			{
 				gotoSchoolSecondHall();
 			}
 			break;
 		case 16: // 1F, Corridor
-			if(Chk_Access_GekkoukanHigh_016_011())
+			if(ChkGek016_011())
 			{
-				if(Chk_Access_GekkoukanHigh_011_004())
+				if(ChkGek011_004())
 				{
 					gotoSchoolSecondHall();
 				}
 			}
 			break;
 		case 20: // 1F, Sport Clubs Hallway
-			if(Chk_Access_GekkoukanHigh_020_016())
+			if(ChkGek020_016())
 			{
-				if(Chk_Access_GekkoukanHigh_016_011())
+				if(ChkGek016_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_004())
+					if(ChkGek011_004())
 					{
 						gotoSchoolSecondHall();
 					}
@@ -707,20 +707,20 @@ void SchoolHomeroom()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // 1F, Main Lobby
-			if(Chk_Access_GekkoukanHigh_001_004())
+			if(ChkGek001_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_003())
+				if(ChkGek004_003())
 				{
 						gotoSchoolHomeroom();
 				}
 			}
 			break;
 		case 2: //School Entrance
-			if(Chk_Access_GekkoukanHigh_002_001())
+			if(ChkGek002_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_004())
+				if(ChkGek001_004())
 				{
-					if(Chk_Access_GekkoukanHigh_004_003())
+					if(ChkGek004_003())
 					{
 						gotoSchoolHomeroom();
 					}
@@ -733,26 +733,26 @@ void SchoolHomeroom()
 			CLOSE_MSG_WIN();
 			break;
 		case 4: // 2F, Hallway
-			if(Chk_Access_GekkoukanHigh_004_003())
+			if(ChkGek004_003())
 			{
 				gotoSchoolHomeroom();
 			}
 			break;
 		case 5: // Rooftop
-			if(Chk_Access_GekkoukanHigh_005_004())
+			if(ChkGek005_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_003())
+				if(ChkGek004_003())
 				{
 					gotoSchoolHomeroom();
 				}
 			}
 			break;
 		case 7: // 1F, Faculty Office Hallway
-			if(Chk_Access_GekkoukanHigh_007_001())
+			if(ChkGek007_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_004())
+				if(ChkGek001_004())
 				{
-					if(Chk_Access_GekkoukanHigh_004_003())
+					if(ChkGek004_003())
 					{
 						gotoSchoolHomeroom();
 					}
@@ -760,20 +760,20 @@ void SchoolHomeroom()
 			}
 			break;
 		case 11: // 1F, Laboratory Hallway
-			if(Chk_Access_GekkoukanHigh_011_004())
+			if(ChkGek011_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_003())
+				if(ChkGek004_003())
 				{
 					gotoSchoolHomeroom();
 				}
 			}
 			break;
 		case 16: // 1F, Corridor
-			if(Chk_Access_GekkoukanHigh_016_011())
+			if(ChkGek016_011())
 			{
-				if(Chk_Access_GekkoukanHigh_011_004())
+				if(ChkGek011_004())
 				{
-					if(Chk_Access_GekkoukanHigh_004_003())
+					if(ChkGek004_003())
 					{
 						gotoSchoolHomeroom();
 					}
@@ -781,13 +781,13 @@ void SchoolHomeroom()
 			}
 			break;
 		case 20: // 1F, Sport Clubs Hallway
-			if(Chk_Access_GekkoukanHigh_020_016())
+			if(ChkGek020_016())
 			{
-				if(Chk_Access_GekkoukanHigh_016_011())
+				if(ChkGek016_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_004())
+					if(ChkGek011_004())
 					{
-						if(Chk_Access_GekkoukanHigh_004_003())
+						if(ChkGek004_003())
 						{
 							gotoSchoolHomeroom();
 						}
@@ -815,20 +815,20 @@ void SchoolRooftop()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // 1F, Main Lobby
-			if(Chk_Access_GekkoukanHigh_001_004())
+			if(ChkGek001_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_005())
+				if(ChkGek004_005())
 				{
 					gotoSchoolRooftop();
 				}
 			}
 			break;
 		case 2: //School Entrance
-			if(Chk_Access_GekkoukanHigh_002_001())
+			if(ChkGek002_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_004())
+				if(ChkGek001_004())
 				{
-					if(Chk_Access_GekkoukanHigh_004_005())
+					if(ChkGek004_005())
 					{
 						gotoSchoolRooftop();
 					}
@@ -836,16 +836,16 @@ void SchoolRooftop()
 			}
 			break;
 		case 3: //Classroom 2-F
-			if(Chk_Access_GekkoukanHigh_003_004())
+			if(ChkGek003_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_005())
+				if(ChkGek004_005())
 				{
 					gotoSchoolRooftop();
 				}
 			}
 			break;
 		case 4: // 2F, Hallway
-			if(Chk_Access_GekkoukanHigh_004_005())
+			if(ChkGek004_005())
 			{
 				gotoSchoolRooftop();
 			}
@@ -856,11 +856,11 @@ void SchoolRooftop()
 			CLOSE_MSG_WIN();
 			break;
 		case 7: // 1F, Faculty Office Hallway
-			if(Chk_Access_GekkoukanHigh_007_001())
+			if(ChkGek007_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_004())
+				if(ChkGek001_004())
 				{
-					if(Chk_Access_GekkoukanHigh_004_005())
+					if(ChkGek004_005())
 					{
 						gotoSchoolRooftop();
 					}
@@ -868,20 +868,20 @@ void SchoolRooftop()
 			}
 			break;
 		case 11: // 1F, Laboratory Hallway
-			if(Chk_Access_GekkoukanHigh_011_004())
+			if(ChkGek011_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_005())
+				if(ChkGek004_005())
 				{
 					gotoSchoolRooftop();
 				}
 			}
 			break;
 		case 16: // 1F, Corridor
-			if(Chk_Access_GekkoukanHigh_016_011())
+			if(ChkGek016_011())
 			{
-				if(Chk_Access_GekkoukanHigh_011_004())
+				if(ChkGek011_004())
 				{
-					if(Chk_Access_GekkoukanHigh_004_005())
+					if(ChkGek004_005())
 					{
 						gotoSchoolRooftop();
 					}
@@ -889,13 +889,13 @@ void SchoolRooftop()
 			}
 			break;
 		case 20: // 1F, Sport Clubs Hallway
-			if(Chk_Access_GekkoukanHigh_020_016())
+			if(ChkGek020_016())
 			{
-				if(Chk_Access_GekkoukanHigh_016_011())
+				if(ChkGek016_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_004())
+					if(ChkGek011_004())
 					{
-						if(Chk_Access_GekkoukanHigh_004_005())
+						if(ChkGek004_005())
 						{
 							gotoSchoolRooftop();
 						}
@@ -923,28 +923,28 @@ void SchoolMap()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // 1F, Main Lobby
-			if(Chk_Access_GekkoukanHigh_001_002())
+			if(ChkGek001_002())
 			{
-				if(Chk_Access_GekkoukanHigh_002_MAP())
+				if(ChkGek002_MAP())
 				{
 					gotoSchoolMap();
 				}
 			}
 			break;
 		case 2: //School Entrance
-			if(Chk_Access_GekkoukanHigh_002_MAP())
+			if(ChkGek002_MAP())
 			{
 				gotoSchoolMap();
 			}
 			break;
 		case 3: //Classroom 2-F
-			if(Chk_Access_GekkoukanHigh_003_004())
+			if(ChkGek003_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_001())
+				if(ChkGek004_001())
 				{
-					if(Chk_Access_GekkoukanHigh_001_002())
+					if(ChkGek001_002())
 					{
-						if(Chk_Access_GekkoukanHigh_002_MAP())
+						if(ChkGek002_MAP())
 						{
 							gotoSchoolMap();
 						}
@@ -953,11 +953,11 @@ void SchoolMap()
 			}
 			break;
 		case 4: // 2F, Hallway
-			if(Chk_Access_GekkoukanHigh_004_001())
+			if(ChkGek004_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_002())
+				if(ChkGek001_002())
 				{
-					if(Chk_Access_GekkoukanHigh_002_MAP())
+					if(ChkGek002_MAP())
 					{
 						gotoSchoolMap();
 					}
@@ -965,13 +965,13 @@ void SchoolMap()
 			}
 			break;
 		case 5: // Rooftop
-			if(Chk_Access_GekkoukanHigh_005_004())
+			if(ChkGek005_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_001())
+				if(ChkGek004_001())
 				{
-					if(Chk_Access_GekkoukanHigh_001_002())
+					if(ChkGek001_002())
 					{
-						if(Chk_Access_GekkoukanHigh_002_MAP())
+						if(ChkGek002_MAP())
 						{
 							gotoSchoolMap();
 						}
@@ -980,11 +980,11 @@ void SchoolMap()
 			}
 			break;
 		case 7: // 1F, Faculty Office Hallway
-			if(Chk_Access_GekkoukanHigh_007_001())
+			if(ChkGek007_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_002())
+				if(ChkGek001_002())
 				{
-					if(Chk_Access_GekkoukanHigh_002_MAP())
+					if(ChkGek002_MAP())
 					{
 						gotoSchoolMap();
 					}
@@ -992,11 +992,11 @@ void SchoolMap()
 			}
 			break;
 		case 11: // 1F, Laboratory Hallway
-			if(Chk_Access_GekkoukanHigh_011_001())
+			if(ChkGek011_001())
 			{
-				if(Chk_Access_GekkoukanHigh_001_002())
+				if(ChkGek001_002())
 				{
-					if(Chk_Access_GekkoukanHigh_002_MAP())
+					if(ChkGek002_MAP())
 					{
 						gotoSchoolMap();
 					}
@@ -1004,13 +1004,13 @@ void SchoolMap()
 			}
 			break;
 		case 16: // 1F, Corridor
-			if(Chk_Access_GekkoukanHigh_016_011())
+			if(ChkGek016_011())
 			{
-				if(Chk_Access_GekkoukanHigh_011_001())
+				if(ChkGek011_001())
 				{
-					if(Chk_Access_GekkoukanHigh_001_002())
+					if(ChkGek001_002())
 					{
-						if(Chk_Access_GekkoukanHigh_002_MAP())
+						if(ChkGek002_MAP())
 						{
 							gotoSchoolMap();
 						}
@@ -1019,15 +1019,15 @@ void SchoolMap()
 			}
 			break;
 		case 20: // 1F, Sport Clubs Hallway
-			if(Chk_Access_GekkoukanHigh_020_016())
+			if(ChkGek020_016())
 			{
-				if(Chk_Access_GekkoukanHigh_016_011())
+				if(ChkGek016_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_001())
+					if(ChkGek011_001())
 					{
-						if(Chk_Access_GekkoukanHigh_001_002())
+						if(ChkGek001_002())
 						{
-							if(Chk_Access_GekkoukanHigh_002_MAP())
+							if(ChkGek002_MAP())
 							{
 								gotoSchoolMap();
 							}
@@ -1059,62 +1059,62 @@ void SchoolShop()
 			gotoSchoolShop();
 			break;
 		case 2: //School Entrance
-			if(Chk_Access_GekkoukanHigh_002_001())
+			if(ChkGek002_001())
 			{
 				NoShop();
 			}
 			break;
 		case 3: //Classroom 2-F
-			if(Chk_Access_GekkoukanHigh_003_004())
+			if(ChkGek003_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_001())
+				if(ChkGek004_001())
 				{
 					gotoSchoolShop();
 				}
 			}
 			break;
 		case 4: // 2F, Hallway
-			if(Chk_Access_GekkoukanHigh_004_001())
+			if(ChkGek004_001())
 			{
 				gotoSchoolShop();
 			}
 			break;
 		case 5: // Rooftop
-			if(Chk_Access_GekkoukanHigh_005_004())
+			if(ChkGek005_004())
 			{
-				if(Chk_Access_GekkoukanHigh_004_001())
+				if(ChkGek004_001())
 				{
 					gotoSchoolShop();
 				}
 			}
 			break;
 		case 7: // 1F, Faculty Office Hallway
-			if(Chk_Access_GekkoukanHigh_007_001())
+			if(ChkGek007_001())
 			{
 				gotoSchoolShop();
 			}
 			break;
 		case 11: // 1F, Laboratory Hallway
-			if(Chk_Access_GekkoukanHigh_011_001())
+			if(ChkGek011_001())
 			{
 				gotoSchoolShop();
 			}
 			break;
 		case 16: // 1F, Corridor
-			if(Chk_Access_GekkoukanHigh_016_011())
+			if(ChkGek016_011())
 			{
-				if(Chk_Access_GekkoukanHigh_011_001())
+				if(ChkGek011_001())
 				{
 						NoShop();
 				}
 			}
 			break;
 		case 20: // 1F, Sport Clubs Hallway
-			if(Chk_Access_GekkoukanHigh_020_016())
+			if(ChkGek020_016())
 			{
-				if(Chk_Access_GekkoukanHigh_016_011())
+				if(ChkGek016_011())
 				{
-					if(Chk_Access_GekkoukanHigh_011_001())
+					if(ChkGek011_001())
 					{
 							NoShop();
 					}

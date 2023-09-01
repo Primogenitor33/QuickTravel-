@@ -13,13 +13,13 @@ void MallLobby()
 			CLOSE_MSG_WIN();
 			break;
 		case 2: // Club Escapade
-			if(Chk_Access_PaulowniaMall_002_001())
+			if(ChkPaul002_001())
 			{
 				gotoMallLobby();
 			}
 			break;
 		case 9: // Back Alley
-			if(Chk_Access_PaulowniaMall_009_001())
+			if(ChkPaul009_001())
 			{
 				gotoMallLobby();
 			}
@@ -44,15 +44,15 @@ void MallAlley()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // Mall Lobby
-			if(Chk_Access_PaulowniaMall_001_009())
+			if(ChkPaul001_009())
 			{
 				gotoMallAlley();
 			}
 			break;
 		case 2: // Club Escapade
-			if(Chk_Access_PaulowniaMall_002_001())
+			if(ChkPaul002_001())
 			{
-				if(Chk_Access_PaulowniaMall_001_009())
+				if(ChkPaul001_009())
 				{
 					gotoMallAlley();
 				}
@@ -83,24 +83,24 @@ void MallMap()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // Mall Lobby
-			if(Chk_Access_PaulowniaMall_001_MAP())
+			if(ChkPaul001_MAP())
 			{
 				gotoMallMap();
 			}
 			break;
 		case 2: // Club Escapade
-			if(Chk_Access_PaulowniaMall_002_001())
+			if(ChkPaul002_001())
 			{
-				if(Chk_Access_PaulowniaMall_001_MAP())
+				if(ChkPaul001_MAP())
 				{
 					gotoMallMap();
 				}
 			}
 			break;
 		case 9: // Back Alley
-			if(Chk_Access_PaulowniaMall_009_001())
+			if(ChkPaul009_001())
 			{
-				if(Chk_Access_PaulowniaMall_001_MAP())
+				if(ChkPaul001_MAP())
 				{
 					gotoMallMap();
 				}
@@ -126,15 +126,15 @@ void MallVelvet()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // Mall Lobby
-			if(Chk_Access_PaulowniaMall_001_009())
+			if(ChkPaul001_009())
 			{
 				gotoMallVelvet();
 			}
 			break;
 		case 2: // Club Escapade
-			if(Chk_Access_PaulowniaMall_002_001())
+			if(ChkPaul002_001())
 			{
-				if(Chk_Access_PaulowniaMall_001_009())
+				if(ChkPaul001_009())
 				{
 					gotoMallVelvet();
 				}
@@ -210,7 +210,7 @@ void MallClub()
 	switch(GET_FIELD_MINOR())
 	{
 		case 1: // Mall Lobby
-			if(Chk_Access_PaulowniaMall_001_002())
+			if(ChkPaul001_002())
 			{
 				gotoMallClub();
 			}
@@ -221,9 +221,9 @@ void MallClub()
 			CLOSE_MSG_WIN();
 			break;
 		case 9: // Back Alley
-			if(Chk_Access_PaulowniaMall_009_001())
+			if(ChkPaul009_001())
 			{
-				if(Chk_Access_PaulowniaMall_001_002())
+				if(ChkPaul001_002())
 				{
 					gotoMallClub();
 				}
@@ -252,13 +252,13 @@ void MallCoffee()
 			gotoMallCoffee();
 			break;
 		case 2: // Club Escapade
-			if(Chk_Access_PaulowniaMall_002_001())
+			if(ChkPaul002_001())
 			{
 				gotoMallCoffee();
 			}
 			break;
 		case 9: // Back Alley
-			if(Chk_Access_PaulowniaMall_009_001())
+			if(ChkPaul009_001())
 			{
 				gotoMallCoffee();
 			}	
@@ -390,13 +390,13 @@ void MallAccessory()
 			gotoMallAccessory();
 			break;
 		case 2: // Club Escapade
-			if(Chk_Access_PaulowniaMall_002_001())
+			if(ChkPaul002_001())
 			{
 				gotoMallAccessory();
 			}
 			break;
 		case 9: // Back Alley
-			if(Chk_Access_PaulowniaMall_009_001())
+			if(ChkPaul009_001())
 			{
 				gotoMallAccessory();
 			}	
@@ -481,13 +481,13 @@ void MallPolice()
 			gotoMallPolice();
 			break;
 		case 2: // Club Escapade
-			if(Chk_Access_PaulowniaMall_002_001())
+			if(ChkPaul002_001())
 			{
 				gotoMallPolice();
 			}
 			break;
 		case 9: // Back Alley
-			if(Chk_Access_PaulowniaMall_009_001())
+			if(ChkPaul009_001())
 			{
 				gotoMallPolice();
 			}	
@@ -597,13 +597,13 @@ void MallKaraoke()
 			gotoMallKaraoke();
 			break;
 		case 2: // Club Escapade
-			if(Chk_Access_PaulowniaMall_002_001())
+			if(ChkPaul002_001())
 			{
 				gotoMallKaraoke();
 			}
 			break;
 		case 9: // Back Alley
-			if(Chk_Access_PaulowniaMall_009_001())
+			if(ChkPaul009_001())
 			{
 				gotoMallKaraoke();
 			}	
@@ -756,13 +756,13 @@ void MallAntique()
 			gotoMallAntique();
 			break;
 		case 2: // Club Escapade
-			if(Chk_Access_PaulowniaMall_002_001())
+			if(ChkPaul002_001())
 			{
 				gotoMallAntique();
 			}
 			break;
 		case 9: // Back Alley
-			if(Chk_Access_PaulowniaMall_009_001())
+			if(ChkPaul009_001())
 			{
 				gotoMallAntique();
 			}	
@@ -850,13 +850,13 @@ void MallDrug()
 			gotoMallDrug();
 			break;
 		case 2: // Club Escapade
-			if(Chk_Access_PaulowniaMall_002_001())
+			if(ChkPaul002_001())
 			{
 				gotoMallDrug();
 			}
 			break;
 		case 9: // Back Alley
-			if(Chk_Access_PaulowniaMall_009_001())
+			if(ChkPaul009_001())
 			{
 				gotoMallDrug();
 			}	
@@ -934,13 +934,13 @@ void MallCrane()
 			gotoMallCrane();
 			break;
 		case 2: // Club Escapade
-			if(Chk_Access_PaulowniaMall_002_001())
+			if(ChkPaul002_001())
 			{
 				gotoMallCrane();
 			}
 			break;
 		case 9: // Back Alley
-			if(Chk_Access_PaulowniaMall_009_001())
+			if(ChkPaul009_001())
 			{
 				gotoMallCrane();
 			}	
@@ -1039,13 +1039,13 @@ void MallArcade()
 			gotoMallArcade();
 			break;
 		case 2: // Club Escapade
-			if(Chk_Access_PaulowniaMall_002_001())
+			if(ChkPaul002_001())
 			{
 				gotoMallArcade();
 			}
 			break;
 		case 9: // Back Alley
-			if(Chk_Access_PaulowniaMall_009_001())
+			if(ChkPaul009_001())
 			{
 				gotoMallArcade();
 			}	
