@@ -1,0 +1,4 @@
+void OpenMoonlightWin_001()
+{
+	boss_battle_r();
+}

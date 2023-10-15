@@ -1,0 +1,4 @@
+void OpenYakushimaWin_ALL()
+{
+	ChkYaku001_OUT();
+}
