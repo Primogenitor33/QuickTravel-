@@ -17,7 +17,7 @@ import ("QT/Mall.flow");
 import ("QT/Iwatodai.flow");
 import ("QT/PortIsland.flow");
 import ("QT/Shrine.flow");
-import ("Fuuka/Record.flow");
+import ("Records/Record.flow");
 import ("QT/Shrine.msg");
 import ("QT/Shared.msg");
 import ("QT/FESMall.flow");
@@ -766,7 +766,7 @@ int MallFacilities3()
 	SEL_CHK_PAD(13,4);
 	//Previous Page on D-Pad Left
 	SEL_CHK_PAD(15,5);
-	if ( BIT_CHK( 9997 ) == 0 {
+	if ( BIT_CHK( 9997 ) == 0 ) {
 		SET_MASK( 1 );
 	}
 	int select = SEL( MallFacilities3 );
