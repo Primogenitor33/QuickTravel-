@@ -766,7 +766,7 @@ int MallFacilities3()
 	SEL_CHK_PAD(13,4);
 	//Previous Page on D-Pad Left
 	SEL_CHK_PAD(15,5);
-	if ( BIT_CHK( 9997 ) == 0 ) {
+	if (!BIT_CHK(9997)) {
 		SET_MASK( 1 );
 	}
 	int select = SEL( MallFacilities3 );
