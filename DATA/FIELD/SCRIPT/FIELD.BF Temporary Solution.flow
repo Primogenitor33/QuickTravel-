@@ -1,7 +1,0 @@
-import( "FIELD.BF" );
-import( "QuickTravel Temporary Solution.flow" );
-
-void field_order_party_hook()
-{
-	QuickTravelDisplay();
-}
