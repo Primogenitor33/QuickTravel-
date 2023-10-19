@@ -17,7 +17,7 @@ import ("QT/Mall.flow");
 import ("QT/Iwatodai.flow");
 import ("QT/PortIsland.flow");
 import ("QT/Shrine.flow");
-import ("Fuuka/Record.flow");
+import ("Records/Record.flow");
 import ("QT/Shrine.msg");
 import ("QT/Shared.msg");
 import ("QT/FESMall.flow");
