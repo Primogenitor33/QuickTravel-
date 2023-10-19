@@ -107,22 +107,22 @@
 [f 0 8 -258][f 1 31]You are already there.[n][f 0 4][e]
 
 [msg Page1of1]
-[f 0 8 65278][f 1 31]  Page 1 of 1.[n][f 0 21 -1][e]
+[f 0 8 65278][f 1 31]  Page 1 of 1.[n][f 0 21 9999][e]
 
 [msg Page1of2]
-[f 0 8 65278][f 1 31]  Page 1 of 2.[n][f 0 21 -1][e]
+[f 0 8 65278][f 1 31]  Page 1 of 2.[n][f 0 21 9999][e]
 
 [msg Page2of2]
-[f 0 8 65278][f 1 31]  Page 2 of 2.[n][f 0 21 -1][e]
+[f 0 8 65278][f 1 31]  Page 2 of 2.[n][f 0 21 9999][e]
 
 [msg Page1of3]
-[f 0 8 65278][f 1 31]  Page 1 of 3.[n][f 0 21 -1][e]
+[f 0 8 65278][f 1 31]  Page 1 of 3.[n][f 0 21 9999][e]
 
 [msg Page2of3]
-[f 0 8 65278][f 1 31]  Page 2 of 3.[n][f 0 21 -1][e]
+[f 0 8 65278][f 1 31]  Page 2 of 3.[n][f 0 21 9999][e]
 
 [msg Page3of3]
-[f 0 8 65278][f 1 31]  Page 3 of 3.[n][f 0 21 -1][e]
+[f 0 8 65278][f 1 31]  Page 3 of 3.[n][f 0 21 9999][e]
 
 [msg QT_TUTORIAL]
 [f 0 8 65278][f 1 31][f 2 2 65535 65535][f 2 3 65535 1]You can press Left or Right on the D-Pad to go to the[n]Previous or Next Page.[n][f 0 4][e]
