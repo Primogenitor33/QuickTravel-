@@ -494,6 +494,7 @@ int DormTravel1()
 			break;
 		case 7: //Facilities (Start)
 			No_Facilities();
+			break;
 		default:
 			break;
 	}
