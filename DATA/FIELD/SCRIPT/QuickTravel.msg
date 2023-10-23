@@ -125,6 +125,6 @@
 [f 0 8 65278][f 1 31]  Page 3 of 3.[n][f 0 21 9999][e]
 
 [msg QT_TUTORIAL]
-[f 0 8 65278][f 1 31][f 2 2 65535 65535][f 2 3 65535 1]You can press Left or Right on the D-Pad to go to the[n]Previous or Next Page.[n][f 0 4][e]
-[f 0 8 65278][f 1 31][f 2 2 65535 65535][f 2 3 65535 1]You can press Select to open the Map.[n](Only when the QT menu is open.)[n][f 0 4][e]
-[f 0 8 65278][f 1 31][f 2 2 65535 65535][f 2 3 65535 1]You can press Start to open the Shops Menu.[n](Only when the QT menu is open.)[n][f 0 4][e]
+[f 0 8 65278][f 1 31][f 2 2 65535 65535][f 2 3 65535 0]You can press Left or Right on the D-Pad to go to the[n]Previous or Next Page.[n][f 0 4][e]
+[f 0 8 65278][f 1 31][f 2 2 65535 65535][f 2 3 65535 0]You can press Select to open the Map.[n](Only when the QT menu is open.)[n][f 0 4][e]
+[f 0 8 65278][f 1 31][f 2 2 65535 65535][f 2 3 65535 0]You can press Start to open the Shops Menu.[n](Only when the QT menu is open.)[n][f 0 4][e]

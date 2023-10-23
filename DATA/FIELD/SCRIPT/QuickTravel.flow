@@ -1083,7 +1083,7 @@ void TartarusTravel()
 			OPEN_MSG_WIN();
 			MSG( Choose );
 			FUNCTION_00B7(0);
-			FUNCTION_011C(12, Page1of1);
+			FUNCTION_011C(13, Page1of1);
 			SEL_CHK_PAD( 6, 20 );
 			if (!( ( ( ( ( ( ( ( ( ( ( ( ( BIT_CHK( 3501 ) == 1 ) || ( BIT_CHK( 3504 ) == 1 ) ) || ( BIT_CHK( 3505 ) == 1 ) ) || ( BIT_CHK( 3506 ) == 1 ) ) || ( BIT_CHK( 3507 ) == 1 ) ) || ( BIT_CHK( 3508 ) == 1 ) ) || ( BIT_CHK( 3509 ) == 1 ) ) 
 			|| ( BIT_CHK( 3510 ) == 1 ) ) || ( BIT_CHK( 3511 ) == 1 ) ) || ( BIT_CHK( 3512 ) == 1 ) ) || ( BIT_CHK( 3513 ) == 1 ) ) || ( BIT_CHK( 3514 ) == 1 ) ) || ( BIT_CHK( 3515 ) == 1 ) ))
