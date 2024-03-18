@@ -1,0 +1,45 @@
+import( "LMAP.BF" );
+import( "QTMap.flow" );
+
+global( 21 ) int gVar21;
+global( 22 ) int gVar22;
+global( 100 ) int gVar100;
+global( 23 ) int gVar23;
+global( 24 ) int gVar24;
+global( 25 ) int gVar25;
+global( 26 ) int gVar26;
+global( 27 ) int gVar27;
+global( 28 ) int gVar28;
+global( 29 ) int gVar29;
+global( 30 ) int gVar30;
+global( 81 ) int gVar81;
+
+void lmap_highscool_hook()
+{
+	QTMapSchool();
+	return;
+}
+
+void lmap_pornian_hook()
+{
+	QTMapMall();
+	return;
+}
+
+void lmap_stationfront_hook()
+{
+	QTMapPortIsland();
+	return;
+}
+
+void lmap_minato_town_hook()
+{
+	QTMapIwatodai();
+	return;
+}
+
+void lmap_dormitory_hook()
+{
+	QTMapDorm();
+	return;
+}

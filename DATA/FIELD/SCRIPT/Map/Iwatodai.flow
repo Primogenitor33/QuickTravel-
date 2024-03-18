@@ -1,0 +1,115 @@
+void IwatodaiStation()
+{
+	FUNCTION_00BC( 3 );
+	FUNCTION_00BF();
+	FUNCTION_000C( 10 );
+	FADE( 1, 0 );
+	FADE_SYNC();
+	if ( ( ( BIT_CHK( 3091 ) == 1 ) || ( BIT_CHK( 3092 ) == 1 ) ) || ( BIT_CHK( 3093 ) == 1 ) )
+	{
+		BIT_OFF( 3091 );
+		BIT_OFF( 3092 );
+		BIT_OFF( 3093 );
+		CALL_FIELD( 9, 2, 2, 0 );
+		FUNCTION_00BE();
+		return;
+	}
+	else 
+	{
+		BIT_OFF( 3090 );
+		CALL_FIELD( 9, 1, 0, 0 );
+		FUNCTION_00BE();
+		return;
+	}
+}
+
+void IwatodaiGroundFloor()
+{
+	if(ChkIwa002_001())
+	{
+		FUNCTION_00BC( 3 );
+		FUNCTION_00BF();
+		FUNCTION_000C( 10 );
+		FADE( 1, 0 );
+		FADE_SYNC();
+		if ( ( ( BIT_CHK( 3091 ) == 1 ) || ( BIT_CHK( 3092 ) == 1 ) ) || ( BIT_CHK( 3093 ) == 1 ) )
+		{
+			BIT_OFF( 3091 );
+			BIT_OFF( 3092 );
+			BIT_OFF( 3093 );
+			CALL_FIELD( 9, 1, 1, 0 );
+			FUNCTION_00BE();
+			return;
+		}
+		else 
+		{
+			BIT_OFF( 3090 );
+			CALL_FIELD( 9, 1, 1, 0 );
+			FUNCTION_00BE();
+			return;
+		}
+	}
+	else
+	{
+		IwatodaiMap();
+	}
+}
+
+void IwatodaiUpperFloor()
+{
+	if(ChkIwa002_001())
+	{
+		if(ChkIwa001_007())
+		{
+			FUNCTION_00BC( 3 );
+			FUNCTION_00BF();
+			FUNCTION_000C( 10 );
+			FADE( 1, 0 );
+			FADE_SYNC();
+			if ( ( ( BIT_CHK( 3091 ) == 1 ) || ( BIT_CHK( 3092 ) == 1 ) ) || ( BIT_CHK( 3093 ) == 1 ) )
+			{
+				BIT_OFF( 3091 );
+				BIT_OFF( 3092 );
+				BIT_OFF( 3093 );
+				CALL_FIELD( 9, 7, 0, 0 );
+				FUNCTION_00BE();
+				return;
+			}
+			else 
+			{
+				BIT_OFF( 3090 );
+				CALL_FIELD( 9, 7, 0, 0 );
+				FUNCTION_00BE();
+				return;
+			}
+		}
+		else
+		{
+			IwatodaiMap();
+		}
+	}
+	else
+	{
+		IwatodaiMap();
+	}
+}
+
+void IwatodaiMap()
+{
+	if ( ( ( BIT_CHK( 3091 ) == 1 ) || ( BIT_CHK( 3092 ) == 1 ) ) || ( BIT_CHK( 3093 ) == 1 ) )
+	{
+		BIT_OFF( 3091 );
+		BIT_OFF( 3092 );
+		BIT_OFF( 3093 );
+		CALL_MAP( 3 );
+		FUNCTION_00BE();
+		return;
+	}
+	else 
+	{
+		BIT_OFF( 3090 );
+		CALL_MAP( 3 );
+		FUNCTION_00BE();
+		return;
+	}
+}

@@ -1,0 +1,117 @@
+import ("QT/Chk_Access/Chk_Access_Dorm_F.flow");
+import ("QT/Chk_Access/Chk_Access_PaulowniaMall_F.flow");
+import ("QT/Chk_Access/Chk_Access_GekkoukanHigh.flow");
+import ("QT/Chk_Access/Chk_Access_DormQT.flow");
+import ("QT/Chk_Access/Chk_Access_PaulowniaMall.flow");
+import ("QT/Chk_Access/Chk_Access_IwatodaiStation.flow");
+import ("QT/Chk_Access/Chk_Access_PortIslandStation.flow");
+import ("Map/School.flow");
+import ("Map/Mall.flow");
+import ("Map/PortIsland.flow");
+import ("Map/Iwatodai.flow");
+import ("Map/Dorm.flow");
+import ("QT/Chk_Access/Chk_Access.msg");
+import( "QTMap.msg" );
+
+void QTMapSchool()
+{
+	if ( BIT_CHK( 2575 ) == 1 )
+    {
+        SchoolNight();
+    }
+	else 
+	{
+		QTMapSchoolTravel();
+	}
+	return;
+}
+
+void QTMapMall()
+{
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of1);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	int choice = SEL( Mall );
+	FUNCTION_0005();
+	CLOSE_MSG_WIN();
+	switch(choice)
+	{
+		case 0: // Paulownia Mall
+			MallLobby();
+			break;
+		case 1: // Back Alley
+			MallAlley();
+			break;
+		case 2: // Club Escapade
+			MallClub();
+			break;
+		default:
+			MallMap();
+			break;
+	}
+	return;
+}
+
+void QTMapPortIsland()
+{
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of1);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	int choice = SEL( PortIsland );
+	FUNCTION_0005();
+	CLOSE_MSG_WIN();
+	switch(choice)
+	{
+		case 0: // Port Island Station
+			PortStation();
+			break;
+		case 1: // Port Island Station Outskirts
+			PortOutskirts();
+			break;
+		default:
+			PortMap();
+			break;
+	}
+	return;
+}
+
+void QTMapIwatodai()
+{
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of1);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	int choice = SEL( Iwatodai );
+	FUNCTION_0005();
+	CLOSE_MSG_WIN();
+	switch(choice)
+	{
+		case 0: // Iwatodai Station
+			IwatodaiStation();
+			break;
+		case 1: // Iwatodai Strip Mall, Ground Floor
+			IwatodaiGroundFloor();
+			break;
+		case 2: // Iwatodai Strip Mall, Upper Floors
+			IwatodaiUpperFloor();
+			break;
+		default:
+			IwatodaiMap();
+			break;
+	}
+	return;
+}
+
+void QTMapDorm()
+{
+	QTMapDormTravel();
+	return;
+}

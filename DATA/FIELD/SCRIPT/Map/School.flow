@@ -1,0 +1,476 @@
+void SchoolNight()
+{
+	BIT_OFF( 3090 );
+	BIT_OFF( 3091 );
+	BIT_OFF( 3092 );
+	BIT_OFF( 3093 );
+	FUNCTION_00BC( 0 );
+	FUNCTION_00BF();
+	FUNCTION_000C( 10 );
+	FADE( 1, 0 );
+	FADE_SYNC();
+	CALL_FIELD( 6, 2, 1, 0 );
+	FUNCTION_00BE();
+	return;
+}
+
+void QTMapSchoolTravel()
+{
+	int page = 1;
+	while(true)
+	{
+		switch(page)
+		{	
+			case 0:
+				return;
+			case 1:
+				page = SchoolTravel1();
+				break;
+			case 2:
+				page = SchoolTravel2();
+				break;
+			case 3:
+				page = SchoolTravel3();
+				break;
+			 default:
+				break;
+		}
+	}
+}
+
+int SchoolTravel1()
+{
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page1of3);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	//Next Page on D-Pad Right
+	SEL_CHK_PAD(13,4);
+	//Previous Page on D-Pad Left
+	SEL_CHK_PAD(15,5);
+	int select = SEL( School );
+	FUNCTION_0005();
+	CLOSE_MSG_WIN();
+	switch (select)
+	{
+		case 0: // School Entranceway
+			SchoolEntrance();
+			break;
+		case 1: // 1st Floor, Main Lobby
+			SchoolLobby();
+			break;
+		case 2: // 1st Floor, Faculty Hall
+			SchoolFacultyHall();
+			break;
+		case 3: //1st Floor, Laboratory Hall
+			SchoolLaboratoryHall();
+			break;
+		case 4: // Next Page (D-Pad Right)
+			return 2;
+		case 5: //Previous Page (D-Pad Left)
+			return 3;
+		default:
+			SchoolMap();
+			break;
+	}
+	return 0;
+}
+
+int SchoolTravel2()
+{
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page2of3);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	//Next Page on D-Pad Right
+	SEL_CHK_PAD(13,4);
+	//Previous Page on D-Pad Left
+	SEL_CHK_PAD(15,5);
+	int select = SEL( School2 );
+	FUNCTION_0005();
+	CLOSE_MSG_WIN();
+	switch (select)
+	{
+		case 0 : // 1st Floor, Corridor
+			SchoolCorridor();
+			break;
+		case 1 : // Sports Hall
+			SchoolSportsHall();
+			break;
+		case 2: // 2nd Floor, Hallway
+			SchoolSecondHall();
+			break;
+		case 3: // Classrom 2-F
+			SchoolHomeroom();
+			break;
+		case 4: // Next Page (D-Pad Right)
+			return 3;
+		case 5: //Previous Page (D-Pad Left)
+			return 1;
+		default:
+			SchoolMap();
+			break;
+	}
+	return 0;
+}
+
+int SchoolTravel3()
+{
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Page3of3);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,20);
+	//Next Page on D-Pad Right
+	SEL_CHK_PAD(13,4);
+	//Previous Page on D-Pad Left
+	SEL_CHK_PAD(15,5);
+	int select = SEL( School3 );
+	FUNCTION_0005();
+	CLOSE_MSG_WIN();
+	switch (select)
+	{
+		case 0: // Rooftop
+			SchoolRooftop();
+			break;
+		case 4: // Next Page (D-Pad Right)
+			return 1;
+		case 5: //Previous Page (D-Pad Left)
+			return 2;
+		default:
+			SchoolMap();
+			break;
+	}
+	return 0;
+}
+
+void SchoolEntrance()
+{
+	BIT_OFF( 3090 );
+	BIT_OFF( 3091 );
+	BIT_OFF( 3092 );
+	BIT_OFF( 3093 );
+	FUNCTION_00BC( 0 );
+	FUNCTION_00BF();
+	FUNCTION_000C( 10 );
+	FADE( 1, 0 );
+	FADE_SYNC();
+	CALL_FIELD( 6, 2, 0, 0 );
+	FUNCTION_00BE();
+	return;
+}
+
+void SchoolLobby()
+{
+	if(ChkGek002_001())
+	{
+		BIT_OFF( 3090 );
+		BIT_OFF( 3091 );
+		BIT_OFF( 3092 );
+		BIT_OFF( 3093 );
+		FUNCTION_00BC( 0 );
+		FUNCTION_00BF();
+		FUNCTION_000C( 10 );
+		FADE( 1, 0 );
+		FADE_SYNC();
+		CALL_FIELD( 6, 1, 1, 0 );
+		FUNCTION_00BE();
+		return;
+	}
+	else
+	{
+		SchoolMap();
+		return;
+	}
+	return;
+}
+
+void SchoolFacultyHall()
+{
+	if(ChkGek002_001())
+	{
+		if(ChkGek001_007())
+		{
+			BIT_OFF( 3090 );
+			BIT_OFF( 3091 );
+			BIT_OFF( 3092 );
+			BIT_OFF( 3093 );
+			FUNCTION_00BC( 0 );
+			FUNCTION_00BF();
+			FUNCTION_000C( 10 );
+			FADE( 1, 0 );
+			FADE_SYNC();
+			CALL_FIELD( 6, 7, 0, 0 );
+			FUNCTION_00BE();
+			return;
+		}
+		else
+		{
+			SchoolMap();
+			return;
+		}
+	}
+	else
+	{
+		SchoolMap();
+		return;
+	}
+	return;
+}
+
+void SchoolLaboratoryHall()
+{
+	if(ChkGek002_001())
+	{
+		if(ChkGek001_011())
+		{
+			BIT_OFF( 3090 );
+			BIT_OFF( 3091 );
+			BIT_OFF( 3092 );
+			BIT_OFF( 3093 );
+			FUNCTION_00BC( 0 );
+			FUNCTION_00BF();
+			FUNCTION_000C( 10 );
+			FADE( 1, 0 );
+			FADE_SYNC();
+			CALL_FIELD( 6, 11, 2, 0 );
+			FUNCTION_00BE();
+			return;
+		}
+		else
+		{
+			SchoolMap();
+			return;
+		}
+	}
+	else
+	{
+		SchoolMap();
+		return;
+	}
+	return;
+}
+
+void SchoolCorridor()
+{
+	if(ChkGek002_001())
+	{
+		if(ChkGek001_011())
+		{
+			if(ChkGek011_016())
+			{
+				BIT_OFF( 3090 );
+				BIT_OFF( 3091 );
+				BIT_OFF( 3092 );
+				BIT_OFF( 3093 );
+				FUNCTION_00BC( 0 );
+				FUNCTION_00BF();
+				FUNCTION_000C( 10 );
+				FADE( 1, 0 );
+				FADE_SYNC();
+				CALL_FIELD( 6, 16, 0, 0 );
+				FUNCTION_00BE();
+				return;
+			}
+			else
+			{
+				SchoolMap();
+				return;
+			}
+		}
+		else
+		{
+			SchoolMap();
+			return;
+		}
+	}
+	else
+	{
+		SchoolMap();
+		return;
+	}
+}
+
+void SchoolSportsHall()
+{
+	if(ChkGek002_001())
+	{
+		if(ChkGek001_011())
+		{
+			if(ChkGek011_016())
+			{
+				if(ChkGek016_020())
+				{
+					BIT_OFF( 3090 );
+					BIT_OFF( 3091 );
+					BIT_OFF( 3092 );
+					BIT_OFF( 3093 );
+					FUNCTION_00BC( 0 );
+					FUNCTION_00BF();
+					FUNCTION_000C( 10 );
+					FADE( 1, 0 );
+					FADE_SYNC();
+					CALL_FIELD( 6, 20, 0, 0 );
+					FUNCTION_00BE();
+					return;
+				}
+				else
+				{
+					SchoolMap();
+					return;
+				}
+			}
+			else
+			{
+				SchoolMap();
+				return;
+			}
+		}
+		else
+		{
+			SchoolMap();
+			return;
+		}
+	}
+	else
+	{
+		SchoolMap();
+		return;
+	}
+	return;	
+}
+
+void SchoolSecondHall()
+{
+	if(ChkGek002_001())
+	{
+		if(ChkGek001_004())
+		{
+			BIT_OFF( 3090 );
+			BIT_OFF( 3091 );
+			BIT_OFF( 3092 );
+			BIT_OFF( 3093 );
+			FUNCTION_00BC( 0 );
+			FUNCTION_00BF();
+			FUNCTION_000C( 10 );
+			FADE( 1, 0 );
+			FADE_SYNC();
+			CALL_FIELD( 6, 4, 3, 0 );
+			FUNCTION_00BE();
+			return;
+		}	
+		else
+		{
+			SchoolMap();
+			return;
+		}
+	}
+	else
+	{
+		SchoolMap();
+		return;
+	}
+	return;
+}
+
+void SchoolHomeroom()
+{
+	if(ChkGek002_001())
+	{
+		if(ChkGek001_004())
+		{
+			if(ChkGek004_003())
+			{
+				BIT_OFF( 3090 );
+				BIT_OFF( 3091 );
+				BIT_OFF( 3092 );
+				BIT_OFF( 3093 );
+				FUNCTION_00BC( 0 );
+				FUNCTION_00BF();
+				FUNCTION_000C( 10 );
+				FADE( 1, 0 );
+				FADE_SYNC();
+				CALL_FIELD( 6, 3, 0, 0 );
+				FUNCTION_00BE();
+				return;
+			}
+			else
+			{
+				SchoolMap();
+				return;
+			}
+		}	
+		else
+		{
+			SchoolMap();
+			return;
+		}
+	}
+	else
+	{
+		SchoolMap();
+		return;
+	}
+	return;
+}
+
+void SchoolRooftop()
+{
+	if(ChkGek002_001())
+	{
+		if(ChkGek001_004())
+		{
+			if(ChkGek004_005())
+			{
+				BIT_OFF( 3090 );
+				BIT_OFF( 3091 );
+				BIT_OFF( 3092 );
+				BIT_OFF( 3093 );
+				FUNCTION_00BC( 0 );
+				FUNCTION_00BF();
+				FUNCTION_000C( 10 );
+				FADE( 1, 0 );
+				FADE_SYNC();
+				CALL_FIELD( 6, 5, 0, 0 );
+				FUNCTION_00BE();
+				return;
+			}
+			else
+			{
+				SchoolMap();
+				return;
+			}
+		}	
+		else
+		{
+			SchoolMap();
+			return;
+		}
+	}
+	else
+	{
+		SchoolMap();
+		return;
+	}
+	return;
+}
+
+void SchoolMap()
+{
+	BIT_OFF( 3090 );
+	BIT_OFF( 3091 );
+	BIT_OFF( 3092 );
+	BIT_OFF( 3093 );
+	FUNCTION_00BC( 0 );
+	FUNCTION_00BF();
+	FUNCTION_000C( 10 );
+	FADE( 1, 0 );
+	FADE_SYNC();
+	CALL_MAP( 0 );
+	FUNCTION_00BE();
+}

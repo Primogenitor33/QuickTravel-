@@ -1,0 +1,71 @@
+void PortStation()
+{
+	FUNCTION_00BC( 2 );
+	FUNCTION_00BF();
+	FUNCTION_000C( 10 );
+	FADE( 1, 0 );
+	FADE_SYNC();
+	if ( ( ( BIT_CHK( 3090 ) == 1 ) || ( BIT_CHK( 3092 ) == 1 ) ) || ( BIT_CHK( 3093 ) == 1 ) )
+	{
+		BIT_OFF( 3090 );
+		BIT_OFF( 3092 );
+		BIT_OFF( 3093 );
+		CALL_FIELD( 10, 1, 3, 0 );
+		FUNCTION_00BE();
+		return;
+	}
+	else 
+	{
+		BIT_OFF( 3091 );
+		CALL_FIELD( 10, 1, 0, 0 );
+		FUNCTION_00BE();
+		return;
+	}
+	return;
+}
+
+void PortOutskirts()
+{
+	FUNCTION_00BC( 2 );
+	FUNCTION_00BF();
+	FUNCTION_000C( 10 );
+	FADE( 1, 0 );
+	FADE_SYNC();
+	if ( ( ( BIT_CHK( 3090 ) == 1 ) || ( BIT_CHK( 3092 ) == 1 ) ) || ( BIT_CHK( 3093 ) == 1 ) )
+	{
+		BIT_OFF( 3090 );
+		BIT_OFF( 3092 );
+		BIT_OFF( 3093 );
+		CALL_FIELD( 10, 2, 0, 0 );
+		FUNCTION_00BE();
+		return;
+	}
+	else 
+	{
+		BIT_OFF( 3091 );
+		CALL_FIELD( 10, 2, 0, 0 );
+		FUNCTION_00BE();
+		return;
+	}
+	return;
+}
+
+void PortMap()
+{
+	if ( ( ( BIT_CHK( 3090 ) == 1 ) || ( BIT_CHK( 3092 ) == 1 ) ) || ( BIT_CHK( 3093 ) == 1 ) )
+	{
+		BIT_OFF( 3090 );
+		BIT_OFF( 3092 );
+		BIT_OFF( 3093 );
+		CALL_MAP( 2 );
+		FUNCTION_00BE();
+		return;
+	}
+	else 
+	{
+		BIT_OFF( 3091 );
+		CALL_MAP( 2 );
+		FUNCTION_00BE();
+        return;
+	}
+}

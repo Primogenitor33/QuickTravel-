@@ -1,0 +1,77 @@
+void MallLobby()
+{
+	BIT_OFF( 3090 );
+    BIT_OFF( 3091 );
+    BIT_OFF( 3092 );
+    BIT_OFF( 3093 );
+    FUNCTION_00BC( 1 );
+    FUNCTION_00BF();
+    FUNCTION_000C( 10 );
+    FADE( 1, 0 );
+    FADE_SYNC();
+    CALL_FIELD( 8, 1, 1, 0 );
+    FUNCTION_00BE();
+	return;
+}
+
+void MallAlley()
+{
+	if(ChkPaul001_009())
+	{
+		BIT_OFF( 3090 );
+		BIT_OFF( 3091 );
+		BIT_OFF( 3092 );
+		BIT_OFF( 3093 );
+		FUNCTION_00BC( 1 );
+		FUNCTION_00BF();
+		FUNCTION_000C( 10 );
+		FADE( 1, 0 );
+		FADE_SYNC();
+		CALL_FIELD( 8, 9, 0, 0 );
+		FUNCTION_00BE();
+		return;
+	}
+	else
+	{
+		MallMap();
+	}
+}
+
+void MallClub()
+{
+	if(ChkPaul001_002())
+	{
+		BIT_OFF( 3090 );
+		BIT_OFF( 3091 );
+		BIT_OFF( 3092 );
+		BIT_OFF( 3093 );
+		FUNCTION_00BC( 1 );
+		FUNCTION_00BF();
+		FUNCTION_000C( 10 );
+		FADE( 1, 0 );
+		FADE_SYNC();
+		CALL_FIELD( 8, 2, 0, 0 );
+		FUNCTION_00BE();
+		return;
+	}
+	else
+	{
+		MallMap();
+	}
+}
+
+void MallMap()
+{
+	BIT_OFF( 3090 );
+    BIT_OFF( 3091 );
+    BIT_OFF( 3092 );
+    BIT_OFF( 3093 );
+    FUNCTION_00BC( 1 );
+    FUNCTION_00BF();
+    FUNCTION_000C( 10 );
+    FADE( 1, 0 );
+    FADE_SYNC();
+    CALL_MAP( 1 );
+    FUNCTION_00BE();
+	return;
+}
