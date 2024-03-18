@@ -220,7 +220,6 @@ void SchoolFacultyHall()
 		SchoolMap();
 		return;
 	}
-	return;
 }
 
 void SchoolLaboratoryHall()
@@ -253,7 +252,6 @@ void SchoolLaboratoryHall()
 		SchoolMap();
 		return;
 	}
-	return;
 }
 
 void SchoolCorridor()
@@ -342,7 +340,6 @@ void SchoolSportsHall()
 		SchoolMap();
 		return;
 	}
-	return;	
 }
 
 void SchoolSecondHall()
@@ -375,7 +372,6 @@ void SchoolSecondHall()
 		SchoolMap();
 		return;
 	}
-	return;
 }
 
 void SchoolHomeroom()
@@ -416,7 +412,6 @@ void SchoolHomeroom()
 		SchoolMap();
 		return;
 	}
-	return;
 }
 
 void SchoolRooftop()
@@ -457,7 +452,6 @@ void SchoolRooftop()
 		SchoolMap();
 		return;
 	}
-	return;
 }
 
 void SchoolMap()
@@ -473,4 +467,5 @@ void SchoolMap()
 	FADE_SYNC();
 	CALL_MAP( 0 );
 	FUNCTION_00BE();
+	return;
 }

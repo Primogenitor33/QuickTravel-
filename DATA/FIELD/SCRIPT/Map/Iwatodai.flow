@@ -52,6 +52,7 @@ void IwatodaiGroundFloor()
 	else
 	{
 		IwatodaiMap();
+		return;
 	}
 }
 
@@ -86,11 +87,13 @@ void IwatodaiUpperFloor()
 		else
 		{
 			IwatodaiMap();
+			return;
 		}
 	}
 	else
 	{
 		IwatodaiMap();
+		return;
 	}
 }
 
