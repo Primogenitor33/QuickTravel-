@@ -219,15 +219,13 @@ void FESMallFacilities()
 
 void SchoolTravel()
 {
-	bool selecting = true;
 	int page = 1;
-	while(selecting)
+	while(true)
 	{
 		switch(page)
 		{	
 			case 0:
-				selecting = false;
-				break;
+				return;
 			case 1:
 				page = SchoolTravel1();
 				break;
@@ -411,15 +409,13 @@ void DormTravel()
 		DormTravelEntrance();
 		return;
 	}
-	bool selecting = true;
 	int page = 1;
-	while(selecting)
+	while(true)
 	{
 		switch(page)
 		{	
 			case 0:
-				selecting = false;
-				break;
+				return;
 			case 1:
 				page = DormTravel1();
 				break;
@@ -640,15 +636,13 @@ void MallTravel()
 
 void MallFacilities()
 {
-	bool selecting = true;
 	int page = 1;
-	while(selecting)
+	while(true)
 	{
 		switch(page)
 		{	
 			case 0:
-				selecting = false;
-				break;
+				return;
 			case 1:
 				page = MallFacilities1();
 				break;
@@ -799,15 +793,13 @@ int MallFacilities3()
 
 void IwatodaiTravel()
 {
-	bool selecting = true;
 	int page = 1;
-	while(selecting)
+	while(true)
 	{
 		switch(page)
 		{	
 			case 0:
-				selecting = false;
-				break;
+				return;
 			case 1:
 				page = IwatodaiTravel1();
 				break;
