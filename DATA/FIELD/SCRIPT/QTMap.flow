@@ -112,6 +112,14 @@ void QTMapIwatodai()
 
 void QTMapDorm()
 {
-	QTMapDormTravel();
-	return;
+	if ( ( FUNCTION_0083() == 4 ) || ( FUNCTION_0083() == 5 ) )
+	{
+		lmap_dormitory_unhooked();
+		return;
+	}
+	else
+	{
+		QTMapDormTravel();
+		return;
+	}
 }
