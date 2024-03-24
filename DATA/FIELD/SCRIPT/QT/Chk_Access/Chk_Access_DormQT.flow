@@ -228,15 +228,15 @@ bool ChkDorm003_001() // ( 7, 1, 0, 0 )
             }
             CLOSE_MSG_WIN();
         }
-		if ( ( CHECK_TIME_SPAN( 4, 21, 3, 5 ) == 1 ) && ( BIT_CHK( 3086 ) == 0 ) )
-		{
-			BIT_ON( 3086 );
-		}
 		OPEN_MSG_WIN();
 		MSG( RoomTime );
         SEL_CHK_PAD( 6, 1 );
 		if ( SEL( EnterRoom ) != 1 )
         {
+			if ( ( CHECK_TIME_SPAN( 4, 21, 3, 5 ) == 1 ) && ( BIT_CHK( 3086 ) == 0 ) )
+			{
+				BIT_ON( 3086 );
+			}
 			CLOSE_MSG_WIN();
 			FUNCTION_0186( 15 );
 			ChkDorm015_ANY();
