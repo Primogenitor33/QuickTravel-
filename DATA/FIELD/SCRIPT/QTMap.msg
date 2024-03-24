@@ -32,12 +32,11 @@
 
 [sel Dorm]
 [f 0 5 -258][f 1 31]Dorm Entrance[e]
-[f 0 5 -258][f 1 31]Your Room[e]
 [f 0 5 -258][f 1 31]1st Floor, Lounge[e]
 [f 0 5 -258][f 1 31]2nd Floor, Hallway[e]
+[f 0 5 -258][f 1 31]3rd Floor, Hallway[e]
 
 [sel Dorm2]
-[f 0 5 -258][f 1 31]3rd Floor, Hallway[e]
 [f 0 5 -258][f 1 31]4th Floor, Hallway[e]
 [f 0 5 -258][f 1 31]Meeting Room[e]
 
