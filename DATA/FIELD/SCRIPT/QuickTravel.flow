@@ -18,6 +18,7 @@ import ("QT/Iwatodai.flow");
 import ("QT/PortIsland.flow");
 import ("QT/Shrine.flow");
 import ("Records/Record.flow");
+import ("QT/Dorm.msg");
 import ("QT/Shrine.msg");
 import ("QT/Shared.msg");
 import ("QT/FESMall.flow");

@@ -38,11 +38,23 @@ bool ChkDorm009_002() // ( 7, 2, 0, 0 )
     }
     if ( var14 == 1 )
     {
-        ChkDorm015_ANY();
-		FADE( 1, 0 );
-        FADE_SYNC();
-        NEXT_DAY();
-		return 0;
+		OPEN_MSG_WIN();
+        MSG( DormTime );
+        SEL_CHK_PAD( 6, 1 );
+		if ( SEL( EnterDorm ) != 1 )
+        {
+			CLOSE_MSG_WIN();
+			ChkDorm015_ANY();
+			FADE( 1, 0 );
+			FADE_SYNC();
+			NEXT_DAY();
+			return 0;
+		}
+		else
+		{
+			CLOSE_MSG_WIN();
+            return 0;
+		}
     }
 	return 1;
 }
@@ -220,17 +232,29 @@ bool ChkDorm003_001() // ( 7, 1, 0, 0 )
 		{
 			BIT_ON( 3086 );
 		}
-		FUNCTION_0186( 15 );
-		ChkDorm015_ANY();
-		FADE( 1, 0 );
-		FADE_SYNC();
-		if ( ( GET_MONTH() == 4 ) && ( GET_DAY_OF_MONTH() == 7 ) )
-		{
-			BIT_ON( 9 );
-			CALL_EVENT( 117, 1, 0 );
+		OPEN_MSG_WIN();
+		MSG( RoomTime );
+        SEL_CHK_PAD( 6, 1 );
+		if ( SEL( EnterRoom ) != 1 )
+        {
+			CLOSE_MSG_WIN();
+			FUNCTION_0186( 15 );
+			ChkDorm015_ANY();
+			FADE( 1, 0 );
+			FADE_SYNC();
+			if ( ( GET_MONTH() == 4 ) && ( GET_DAY_OF_MONTH() == 7 ) )
+			{
+				BIT_ON( 9 );
+				CALL_EVENT( 117, 1, 0 );
+			}
+			NEXT_DAY();
+			return 0;
 		}
-		NEXT_DAY();
-        return 0;
+		else
+		{
+			CLOSE_MSG_WIN();
+			return 0;
+		}
     }
 	return 1;
 }
