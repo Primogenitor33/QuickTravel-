@@ -52,10 +52,26 @@
 [f 0 5 -258][f 1 31]Town Map[e]
 [f 0 8 -258][f 1 31]Cancel[e]
 
+[msg DormRoom]
+[f 0 8 65278][f 1 31]  Iwatodai Dorm[n]Your Room[n][f 0 21 9999][e]
+[msg DormEntrance]
+[f 0 8 65278][f 1 31]  Iwatodai Dorm[n]Outside[n][f 0 21 9999][e]
 [msg DormLobby]
-[f 0 8 65278][f 1 31]  Dorm[n]1st Floor, Lounge[n][f 0 21 9999][e]
+[f 0 8 65278][f 1 31]  Iwatodai Dorm[n]Lounge[n][f 0 21 9999][e]
+[msg DormFloorTwo]
+[f 0 8 65278][f 1 31]  Iwatodai Dorm[n]2nd Floor, Hallway[n][f 0 21 9999][e]
+[msg DormFloorThree]
+[f 0 8 65278][f 1 31]  Iwatodai Dorm[n]3rd Floor, Hallway[n][f 0 21 9999][e]
+[msg DormFloorFour]
+[f 0 8 65278][f 1 31]  Iwatodai Dorm[n]4th Floor, Hallway[n][f 0 21 9999][e]
+[msg DormMeetingRoom]
+[f 0 8 65278][f 1 31]  Iwatodai Dorm[n]Meeting Room[n][f 0 21 9999][e]
+[msg DormShinjiRoom]
+[f 0 8 65278][f 1 31]  Iwatodai Dorm[n]Shinji's Room[n][f 0 21 9999][e]
+[msg DormEmptyRoom]
+[f 0 8 65278][f 1 31]  Iwatodai Dorm[n]Vacant Room[n][f 0 21 9999][e]
 
-[sel DormEntrance]
+[sel SELDormEntrance]
 [f 0 5 -258][f 1 31]1st Floor, Lounge[e]
 [f 0 5 -258][f 1 31]Town Map[e]
 [f 0 8 -258][f 1 31]Cancel[e]
@@ -70,6 +86,10 @@
 
 [msg MallLobby]
 [f 0 8 65278][f 1 31]  Paulownia Mall[n][f 0 21 9999][e]
+[msg MallEscapade]
+[f 0 8 65278][f 1 31]  Paulownia Mall[n]Club Escapade[n][f 0 21 9999][e]
+[msg MallBackAlley]
+[f 0 8 65278][f 1 31]  Paulownia Mall[n]Back Alley[n][f 0 21 9999][e]
 
 [sel MallFacilities]
 [f 0 8 -258][f 1 31]Velvet Room[e]
@@ -92,6 +112,13 @@
 [f 0 8 -258][f 1 31]Town Map[e]
 [f 0 8 -258][f 1 31]Cancel[e]
 
+[msg IwatodaiStation]
+[f 0 8 65278][f 1 31]  Iwatodai Station[n][f 0 21 9999][e]
+[msg IwatodaiGroundFloor]
+[f 0 8 65278][f 1 31]  Iwatodai Strip Mall[n]Ground Floor[n][f 0 21 9999][e]
+[msg IwatodaiUpperFloor]
+[f 0 8 65278][f 1 31]  Iwatodai Strip Mall[n]Upper Floors[n][f 0 21 9999][e]
+
 [sel IwatodaiFacilities]
 [f 0 8 -258][f 1 31]Wild-Duck Burger[e]
 [f 0 8 -258][f 1 31]Wakatsu Restaurant[e]
@@ -106,6 +133,11 @@
 [f 0 8 -258][f 1 31]Town Map[e]
 [f 0 8 -258][f 1 31]Cancel[e]
 
+[msg PortStation]
+[f 0 8 65278][f 1 31]  Port Island Station[n][f 0 21 9999][e]
+[msg PortOutskirts]
+[f 0 8 65278][f 1 31]  Port Island Station[n]Outskirts[n][f 0 21 9999][e]
+
 [sel PortFacilities]
 [f 0 8 -258][f 1 31]Rafflesia[e]
 [f 0 8 -258][f 1 31]Screen Shot[e]
@@ -118,11 +150,25 @@
 [f 0 8 65278][f 1 31]Town Map[e]
 [f 0 8 -258][f 1 31]Cancel[e]
 
+[msg ShrineNavi]
+[f 0 8 65278][f 1 31]  Naganaki Shrine[n][f 0 21 9999][e]
+
 [sel Godaigo]
 [f 0 8 -258][f 1 31]1st Floor, Lobby[e]
 [f 0 8 -258][f 1 31]2nd Floor, Hallway[e]
 [f 0 5 -258][f 1 31]3rd Floor, Hallway[e]
 [f 0 8 -258][f 1 31]Cancel[e]
+
+[msg GodaigoLobby]
+[f 0 8 65278][f 1 31]  Godaigo[n]1st Floor[n][f 0 21 9999][e]
+[msg GodaigoFloorTwo]
+[f 0 8 65278][f 1 31]  Godaigo[n]2nd Floor, Hallway[n][f 0 21 9999][e]
+[msg GodaigoFloorThree]
+[f 0 8 65278][f 1 31]  Godaigo[n]3rd Floor, Hallway[n][f 0 21 9999][e]
+[msg GodaigoHotspring]
+[f 0 8 65278][f 1 31]  Godaigo[n]Big Hot Spring[n][f 0 21 9999][e]
+[msg GodaigoMenRoom]
+[f 0 8 65278][f 1 31]  Godaigo[n]Men's Room[n][f 0 21 9999][e]
 
 [sel Tartarus top]
 [f 0 8 65278][f 1 31]Thebel[e]
@@ -130,6 +176,9 @@
 [f 0 8 65278][f 1 31]Teleporter[e]
 [f 0 8 65278][f 1 31]Outside[e]
 [f 0 8 -258][f 1 31]Cancel[e]
+
+[msg TartarusNavi]
+[f 0 8 65278][f 1 31]  Tartarus[n][f 0 21 9999][e]
 
 [msg No_QT]
 [f 0 8 -258][f 1 31]You can't Quick Travel here.[n][f 0 4][e]

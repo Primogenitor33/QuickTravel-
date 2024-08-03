@@ -365,7 +365,7 @@ void DormTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	DormNavi();
 	//Close menu on Circle
 	SEL_CHK_PAD(6,99);
 	//Open map on Select
@@ -417,19 +417,56 @@ void DormTravel()
 	return;
 }
 
+void DormNavi()
+{
+    switch(GET_FIELD_MINOR())
+    {
+        case 1:
+            FUNCTION_011C(12, DormRoom);
+			break;
+        case 9:
+            FUNCTION_011C(12, DormEntrance);
+			break;
+        case 2:
+            FUNCTION_011C(12, DormLobby);
+			break;
+        case 3:
+            FUNCTION_011C(12, DormFloorTwo);
+			break;
+        case 4:
+            FUNCTION_011C(12, DormFloorThree);
+			break;
+        case 5:
+            FUNCTION_011C(12, DormFloorFour);
+			break;
+        case 6:
+            FUNCTION_011C(12, DormMeetingRoom);
+			break;
+		case 14:
+			FUNCTION_011C(12, DormShinjiRoom);
+			break;
+		case 15:
+			FUNCTION_011C(12, DormEmptyRoom);
+			break;
+		default:
+			break;
+    }
+	return;
+}
+
 void DormTravelEntrance()
 {
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	FUNCTION_011C(12, DormEntrance);
 	//Close menu on Circle
 	SEL_CHK_PAD(6,99);
 	//Open map on Select
 	SEL_CHK_PAD(8,30);
 	//Open shop on Start
 	SEL_CHK_PAD(11,31);
-	int select = SEL( DormEntrance );
+	int select = SEL( SELDormEntrance );
 	FUNCTION_0005();
 	CLOSE_MSG_WIN();
 	switch (select)
@@ -468,7 +505,7 @@ void MallTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	MallNavi();
 	//Close menu on Circle
 	SEL_CHK_PAD(6,99);
 	//Open map on Select
@@ -511,12 +548,31 @@ void MallTravel()
 	return;
 }
 
+void MallNavi()
+{
+    switch(GET_FIELD_MINOR())
+    {
+        case 1:
+            FUNCTION_011C(12, MallLobby);
+			break;
+        case 2:
+            FUNCTION_011C(12, MallEscapade);
+			break;
+        case 9:
+            FUNCTION_011C(12, MallBackAlley);
+			break;
+		default:
+			break;
+    }
+	return;
+}
+
 void MallFacilities()
 {
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	MallNavi();
 	//Close menu on Circle
 	SEL_CHK_PAD(6,99);
 	//Open map on Select
@@ -585,7 +641,7 @@ void IwatodaiTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	IwatodaiNavi();
 	//Close menu on Circle
 	SEL_CHK_PAD(6,99);
 	//Open map on Select
@@ -628,12 +684,31 @@ void IwatodaiTravel()
 	return;
 }
 
+void IwatodaiNavi()
+{
+    switch(GET_FIELD_MINOR())
+    {
+        case 2:
+            FUNCTION_011C(12, IwatodaiStation);
+			break;
+        case 1:
+            FUNCTION_011C(12, IwatodaiGroundFloor);
+			break;
+        case 7:
+            FUNCTION_011C(12, IwatodaiUpperFloor);
+			break;
+		default:
+			break;
+    }
+	return;
+}
+
 void IwatodaiFacilities()
 {
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	IwatodaiNavi();
 	//Close menu on Circle
 	SEL_CHK_PAD(6,99);
 	//Open map on Select
@@ -674,7 +749,7 @@ void PortIslandTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	PortNavi();
 	//Close menu on Circle
 	SEL_CHK_PAD(6,99);
 	//Open map on Select
@@ -714,12 +789,28 @@ void PortIslandTravel()
 	return;
 }
 
+void PortNavi()
+{
+    switch(GET_FIELD_MINOR())
+    {
+        case 1:
+            FUNCTION_011C(12, PortStation);
+			break;
+        case 2:
+            FUNCTION_011C(12, PortOutskirts);
+			break;
+		default:
+			break;
+    }
+	return;
+}
+
 void PortFacilities()
 {
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	PortNavi();
 	//Close menu on Circle
 	SEL_CHK_PAD(6,99);
 	//Open map on Select
@@ -753,7 +844,7 @@ void ShrineTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	FUNCTION_011C(12, ShrineNavi);
 	//Close menu on Circle
 	SEL_CHK_PAD(6,99);
 	//Open map on Select
@@ -793,7 +884,7 @@ void GodaigoTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	GodaigoNavi();
 	//Close menu on Circle
 	SEL_CHK_PAD(6,99);
 	//Open map on Select
@@ -826,6 +917,35 @@ void GodaigoTravel()
 	return;
 }
 
+void GodaigoNavi()
+{
+    switch(GET_FIELD_MINOR())
+    {
+        case 2:
+            FUNCTION_011C(12, GodaigoLobby);
+			break;
+        case 3:
+            FUNCTION_011C(12, GodaigoFloorTwo);
+			break;
+        case 4:
+            FUNCTION_011C(12, GodaigoFloorThree);
+			break;
+		case 5:
+            FUNCTION_011C(12, GodaigoHotspring);
+			break;
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+           FUNCTION_011C(12, GodaigoMenRoom);
+		   break;
+		default:
+			break;
+    }
+	return;
+}
+
 void TartarusTravel()
 {
 	switch(GET_FIELD_MINOR())
@@ -838,7 +958,7 @@ void TartarusTravel()
 			OPEN_MSG_WIN();
 			MSG( Choose );
 			FUNCTION_00B7(0);
-			FUNCTION_011C(13, Test);
+			FUNCTION_011C(13, TartarusNavi);
 			SEL_CHK_PAD(6,99);
 			if (!( ( ( ( ( ( ( ( ( ( ( ( ( BIT_CHK( 3501 ) == 1 ) || ( BIT_CHK( 3504 ) == 1 ) ) || ( BIT_CHK( 3505 ) == 1 ) ) || ( BIT_CHK( 3506 ) == 1 ) ) || ( BIT_CHK( 3507 ) == 1 ) ) || ( BIT_CHK( 3508 ) == 1 ) ) || ( BIT_CHK( 3509 ) == 1 ) ) 
 			|| ( BIT_CHK( 3510 ) == 1 ) ) || ( BIT_CHK( 3511 ) == 1 ) ) || ( BIT_CHK( 3512 ) == 1 ) ) || ( BIT_CHK( 3513 ) == 1 ) ) || ( BIT_CHK( 3514 ) == 1 ) ) || ( BIT_CHK( 3515 ) == 1 ) ))
@@ -979,6 +1099,22 @@ int FindMaskPort()
             return 1;
         case 2:
             return 2;
+		default:
+			break;
+    }
+	return 0;
+}
+
+int FindMaskGodaigo()
+{
+    switch(GET_FIELD_MINOR())
+    {
+        case 2:
+            return 1;
+        case 3:
+            return 2;
+        case 4:
+            return 4;
 		default:
 			break;
     }
