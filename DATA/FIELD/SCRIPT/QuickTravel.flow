@@ -112,8 +112,9 @@ void FESDormTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of1);
-	SEL_CHK_PAD( 6, 20 );
+	FUNCTION_011C(12, Test);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,99);
 	if( ( BIT_CHK( 721 ) == 0 ) && ( GET_FIELD_MINOR() == 10 ) )
 	{
 		SET_MASK( 9 );
@@ -162,11 +163,11 @@ void FESMallTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of1);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
+	SEL_CHK_PAD(6,99);
 	//Open shops on Start
-	SEL_CHK_PAD(11,7);
+	SEL_CHK_PAD(11,31);
 	int select = SEL( FESMall );
 	FUNCTION_0005();
 	CLOSE_MSG_WIN();
@@ -178,7 +179,7 @@ void FESMallTravel()
 		case 1: // Facilities
 			FESMallFacilities();
 			break;
-		case 7: //Shops (Start)
+		case 31: //Shops (Start)
 			FESMallFacilities();
 			break;
 		default:
@@ -192,9 +193,9 @@ void FESMallFacilities()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of1);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
+	SEL_CHK_PAD(6,99);
 	int select = SEL( FESMallFacilities );
 	FUNCTION_0005();
 	CLOSE_MSG_WIN();
@@ -220,42 +221,18 @@ void FESMallFacilities()
 
 void SchoolTravel()
 {
-	int page = 1;
-	while(true)
-	{
-		switch(page)
-		{	
-			case 0:
-				return;
-			case 1:
-				page = SchoolTravel1();
-				break;
-			case 2:
-				page = SchoolTravel2();
-				break;
-			case 3:
-				page = SchoolTravel3();
-				break;
-			 default:
-				break;
-		}
-	}
-	return;
-}
-
-int SchoolTravel1()
-{
+	int mask = FindMaskSchool();
 	if( ( BIT_CHK( 3680 ) ) == 1 && ( BIT_CHK( 72 ) == 1 ) )
 	{
 		OPEN_MSG_WIN();
 		MSG( STOP_TEACHERS_ROOM );
 		CLOSE_MSG_WIN();
-		return 0;
+		return;
 	}
 	else if( BIT_CHK( 3680 ) == 1 )
 	{
 		ChkGek004_005();
-		return 0;
+		return;
 	}
 	if ( BIT_CHK( 9999 ) == 0 )
 	{
@@ -264,17 +241,17 @@ int SchoolTravel1()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of3);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
+	SEL_CHK_PAD(6,99);
 	//Open map on Select
-	SEL_CHK_PAD(8,6);
+	SEL_CHK_PAD(8,30);
 	//Open shop on Start
-	SEL_CHK_PAD(11,7);
-	//Next Page on D-Pad Right
-	SEL_CHK_PAD(13,4);
-	//Previous Page on D-Pad Left
-	SEL_CHK_PAD(15,5);
+	SEL_CHK_PAD(11,31);
+	if (mask != 0)
+	{
+		SET_MASK(mask);
+	}
 	int select = SEL( School );
 	FUNCTION_0005();
 	CLOSE_MSG_WIN();
@@ -292,158 +269,59 @@ int SchoolTravel1()
 		case 3: //1st Floor, Laboratory Hall
 			SchoolLaboratoryHall();
 			break;
-		case 4: // Next Page (D-Pad Right)
-			return 2;
-		case 5: //Previous Page (D-Pad Left)
-			return 3;
-		case 6: // Town Map (Select)
-			SchoolMap();
-			break;
-		case 7: //Shop (Start)
-			SchoolShop();
-			break;
-		default:
-			break;
-	}
-	return 0;
-}
-
-int SchoolTravel2()
-{
-	OPEN_MSG_WIN();
-	MSG( Choose );
-	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page2of3);
-	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
-	//Open map on Select
-	SEL_CHK_PAD(8,6);
-	//Open shop on Start
-	SEL_CHK_PAD(11,7);
-	//Next Page on D-Pad Right
-	SEL_CHK_PAD(13,4);
-	//Previous Page on D-Pad Left
-	SEL_CHK_PAD(15,5);
-	int select = SEL( School2 );
-	FUNCTION_0005();
-	CLOSE_MSG_WIN();
-	switch (select)
-	{
-		case 0 : // 1st Floor, Corridor
+		case 4: // 1st Floor, Corridor
 			SchoolCorridor();
 			break;
-		case 1 : // Sports Hall
+		case 5: // Sports Hall
 			SchoolSportsHall();
 			break;
-		case 2: // 2nd Floor, Hallway
+		case 6: // 2nd Floor, Hallway
 			SchoolSecondHall();
 			break;
-		case 3: // Classrom 2-F
+		case 7: // Classrom 2-F
 			SchoolHomeroom();
 			break;
-		case 4: // Next Page (D-Pad Right)
-			return 3;
-		case 5: //Previous Page (D-Pad Left)
-			return 1;
-		case 6: // Town Map (Select)
-			SchoolMap();
-			break;
-		case 7: //Shop (Start)
-			SchoolShop();
-			break;
-		default:
-			break;
-	}
-	return 0;
-}
-
-int SchoolTravel3()
-{
-	OPEN_MSG_WIN();
-	MSG( Choose );
-	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page3of3);
-	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
-	//Open map on Select
-	SEL_CHK_PAD(8,6);
-	//Open shop on Start
-	SEL_CHK_PAD(11,7);
-	//Next Page on D-Pad Right
-	SEL_CHK_PAD(13,4);
-	//Previous Page on D-Pad Left
-	SEL_CHK_PAD(15,5);
-	int select = SEL( School3 );
-	FUNCTION_0005();
-	CLOSE_MSG_WIN();
-	switch (select)
-	{
-		case 0: // Rooftop
+		case 8: // Rooftop
 			SchoolRooftop();
 			break;
-		case 1: // School Shop
+		case 9: // School Shop
 			SchoolShop();
 			break;
-		case 2: // Town Map
+		case 10: // Town Map
 			SchoolMap();
 			break;
-		case 4: // Next Page (D-Pad Right)
-			return 1;
-		case 5: //Previous Page (D-Pad Left)
-			return 2;
-		case 6: // Town Map (Select)
+		case 30: // Town Map (Select)
 			SchoolMap();
 			break;
-		case 7: //Shop (Start)
+		case 31: // School Shop (Start)
 			SchoolShop();
 			break;
 		default:
 			break;
-	}
-	return 0;
-}
-
-void DormTravel()
-{
-	if (GET_FIELD_MINOR() == 9)
-	{
-		DormTravelEntrance();
-		return;
-	}
-	int page = 1;
-	while(true)
-	{
-		switch(page)
-		{	
-			case 0:
-				return;
-			case 1:
-				page = DormTravel1();
-				break;
-			case 2:
-				page = DormTravel2();
-				break;
-			 default:
-				break;
-		}
 	}
 	return;
 }
 
-int DormTravel1()
+void DormTravel()
 {
+	if (GET_FIELD_MINOR() == 9 && (( FUNCTION_0083() == 4 ) || ( FUNCTION_0083() == 5 )))
+	{
+		DormTravelEntrance();
+		return;
+	}
+	int mask = FindMaskDorm();
 	bool male = ( BIT_CHK( 3081 ) == 1 ) || ( BIT_CHK( 3082 ) == 1 );
 	bool female = ( BIT_CHK( 3084 ) == 1 ) || ( BIT_CHK( 3083 ) == 1 ); 
 	bool operation = ( FUNCTION_0083() == 8 ) && ( ( ( GET_MONTH() == 7 ) && ( GET_DAY_OF_MONTH() == 7 ) ) || ( ( GET_MONTH() == 11 ) && ( GET_DAY_OF_MONTH() == 3 ) ) || ( ( GET_MONTH() == 11 ) && ( GET_DAY_OF_MONTH() == 22 ) ) );
 	if( BIT_CHK( 3584 ) == 1 )
 	{
 		ChkDorm003_015_Junpei();
-		return 0;
+		return;
 	}
 	if(operation)
 	{
 		ChkDorm006_005();
-		return 0;
+		return;
 	}
 	if ( BIT_CHK( 9999 ) == 0 )
 	{
@@ -452,17 +330,17 @@ int DormTravel1()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of2);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
+	SEL_CHK_PAD(6,99);
 	//Open map on Select
-	SEL_CHK_PAD(8,6);
+	SEL_CHK_PAD(8,30);
 	//Open shop on Start
-	SEL_CHK_PAD(11,7);
-	//Next Page on D-Pad Right
-	SEL_CHK_PAD(13,4);
-	//Previous Page on D-Pad Left
-	SEL_CHK_PAD(15,5);
+	SEL_CHK_PAD(11,31);
+	if (mask != 0)
+	{
+		SET_MASK(mask);
+	}
 	int select = SEL( Dorm );
 	FUNCTION_0005();
 	CLOSE_MSG_WIN();
@@ -480,73 +358,28 @@ int DormTravel1()
 		case 3: // 2nd Floor, Hallway
 			DormFloorTwo();
 			break;
-		case 4: // Next Page (D-Pad Right)
-			return 2;
-			break;
-		case 5: // Previous Page (D-Pad Left)
-			return 2;
-			break;
-		case 6: // Town Map (Select)
-			DormMap();
-			break;
-		case 7: //Facilities (Start)
-			No_Facilities();
-			break;
-		default:
-			break;
-	}
-	return 0;
-}
-
-int DormTravel2()
-{
-	OPEN_MSG_WIN();
-	MSG( Choose );
-	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page2of2);
-	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
-	//Open map on Select
-	SEL_CHK_PAD(8,6);
-	//Open shop on Start
-	SEL_CHK_PAD(11,7);
-	//Next Page on D-Pad Right
-	SEL_CHK_PAD(13,4);
-	//Previous Page on D-Pad Left
-	SEL_CHK_PAD(15,5);
-	int select = SEL( Dorm2 );
-	FUNCTION_0005();
-	CLOSE_MSG_WIN();
-	switch (select)
-	{
-		case 0: // 3rd Floor, Hallway
+		case 4: // 3rd Floor, Hallway
 			DormFloorThree();
 			break;
-		case 1: // 4th Floor, Hallway
+		case 5: // 4th Floor, Hallway
 			DormFloorFour();
 			break;
-		case 2: // Meeting Room
+		case 6: // Meeting Room
 			MeetingRoom();
 			break;
-		case 3: // Town Map
+		case 7: // Town Map
 			DormMap();
 			break;
-		case 4: // Next Page (D-Pad Right)
-			return 1;
-			break;
-		case 5: // Previous Page (D-Pad Left)
-			return 1;
-			break;
-		case 6: // Town Map (Select)
+		case 30: // Town Map (Select)
 			DormMap();
 			break;
-		case 7: //Facilities (Start)
+		case 31: //Facilities (Start)
 			No_Facilities();
 			break;
 		default:
 			break;
 	}
-	return 0;
+	return;
 }
 
 void DormTravelEntrance()
@@ -554,13 +387,13 @@ void DormTravelEntrance()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of1);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
+	SEL_CHK_PAD(6,99);
 	//Open map on Select
-	SEL_CHK_PAD(8,6);
+	SEL_CHK_PAD(8,30);
 	//Open shop on Start
-	SEL_CHK_PAD(11,7);
+	SEL_CHK_PAD(11,31);
 	int select = SEL( DormEntrance );
 	FUNCTION_0005();
 	CLOSE_MSG_WIN();
@@ -572,10 +405,10 @@ void DormTravelEntrance()
 		case 1: // Town Map
 			DormMap();
 			break;
-		case 6: // Town Map (Select)
+		case 30: // Town Map (Select)
 			DormMap();
 			break;
-		case 7: //Facilities (Start)
+		case 31: //Facilities (Start)
 			No_Facilities();
 			break;
 		default:
@@ -586,6 +419,7 @@ void DormTravelEntrance()
 
 void MallTravel()
 {
+	int mask = FindMaskMall();
 	bool operation = ( GET_MONTH() == 9 ) && ( GET_DAY_OF_MONTH() == 5 ) && ( FUNCTION_0083() == 8 );
 	if(operation)
 	{
@@ -599,13 +433,17 @@ void MallTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of1);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
+	SEL_CHK_PAD(6,99);
 	//Open map on Select
-	SEL_CHK_PAD(8,6);
+	SEL_CHK_PAD(8,30);
 	//Open shops on Start
-	SEL_CHK_PAD(11,7);
+	SEL_CHK_PAD(11,31);
+	if (mask != 0)
+	{
+		SET_MASK(mask);
+	}
 	int select = SEL( Mall );
 	FUNCTION_0005();
 	CLOSE_MSG_WIN();
@@ -614,19 +452,22 @@ void MallTravel()
 		case 0: // Paulownia Mall
 			MallLobby();
 			break;
-		case 1: // Back Alley
+		case 1: // Club Escapade
+			MallClub();
+			break;
+		case 2: // Back Alley
 			MallAlley();
 			break;	
-		case 2: // Facilities
+		case 3: // Facilities
 			MallFacilities();
 			break;
-		case 3: // Town Map
+		case 4: // Town Map
 			MallMap();
 			break;
-		case 6: //Town Map (Select)
+		case 30: //Town Map (Select)
 			MallMap();
 			break;
-		case 7: //Shops (Start)
+		case 31: //Shops (Start)
 			MallFacilities();
 			break;
 		default:
@@ -637,43 +478,18 @@ void MallTravel()
 
 void MallFacilities()
 {
-	int page = 1;
-	while(true)
-	{
-		switch(page)
-		{	
-			case 0:
-				return;
-			case 1:
-				page = MallFacilities1();
-				break;
-			case 2:
-				page = MallFacilities2();
-				break;
-			case 3:
-				page = MallFacilities3();
-				break;
-			 default:
-				break;
-		}
-	}
-	return;
-}
-
-int MallFacilities1()
-{
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of3);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
+	SEL_CHK_PAD(6,99);
 	//Open map on Select
-	SEL_CHK_PAD(8,6);
-	//Next Page on D-Pad Right
-	SEL_CHK_PAD(13,4);
-	//Previous Page on D-Pad Left
-	SEL_CHK_PAD(15,5);
+	SEL_CHK_PAD(8,30);
+	//Check for Fuuka's
+	if (!BIT_CHK(9997)) {
+		SET_MASK( 128 );
+	}
 	int select = SEL( MallFacilities );
 	FUNCTION_0005();
 	CLOSE_MSG_WIN();
@@ -682,145 +498,50 @@ int MallFacilities1()
 		case 0: // Velvet Room
 			MallVelvet();
 			break;
-		case 1: // Club Escapade
-			MallClub();
-			break;
-		case 2: // Coffee
+		case 1: // Coffee
 			MallCoffee();
 			break;
-		case 3: // Be blue V
+		case 2: // Be blue V
 			MallAccessory();
 			break;
-		case 4: // Next Page (D-Pad Right)
-			return 2;
-		case 5: //Previous Page (D-Pad Left)
-			return 3;
-		case 6: //Town Map (Select)
-			MallMap();
-			break;
-		default:
-			break;
-	}
-	return 0;
-}
-
-int MallFacilities2()
-{
-	OPEN_MSG_WIN();
-	MSG( Choose );
-	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page2of3);
-	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
-	//Open map on Select
-	SEL_CHK_PAD(8,6);
-	//Next Page on D-Pad Right
-	SEL_CHK_PAD(13,4);
-	//Previous Page on D-Pad Left
-	SEL_CHK_PAD(15,5);
-	int select = SEL( MallFacilities2 );
-	FUNCTION_0005();
-	CLOSE_MSG_WIN();
-	switch (select)
-	{
-		case 0: // Police Station
+		case 3: // Police Station
 			MallPolice();
 			break;
-		case 1: // Karaoke
+		case 4: // Karaoke
 			MallKaraoke();
 			break;
-		case 2: // Antique Store
+		case 5: // Antique Store
 			MallAntique();
 			break;
-		case 3: // Drug Store
+		case 6: // Drug Store
 			MallDrug();
 			break;
-		case 4: // Next Page (D-Pad Right)
-			return 3;
-		case 5: //Previous Page (D-Pad Left)
-			return 1;
-		case 6: //Town Map (Select)
-			MallMap();
-			break;
-		default:
-			break;
-	}
-	return 0;
-}
-
-int MallFacilities3()
-{
-	OPEN_MSG_WIN();
-	MSG( Choose );
-	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page3of3);
-	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
-	//Open map on Select
-	SEL_CHK_PAD(8,6);
-	//Next Page on D-Pad Right
-	SEL_CHK_PAD(13,4);
-	//Previous Page on D-Pad Left
-	SEL_CHK_PAD(15,5);
-	if (!BIT_CHK(9997)) {
-		SET_MASK( 1 );
-	}
-	int select = SEL( MallFacilities3 );
-	FUNCTION_0005();
-	CLOSE_MSG_WIN();
-	switch (select)
-	{
-		case 0: // Fuuka's Record Shop
+		case 7: // Fuuka's Record Shop
 			MallRecord();
 			break;
-		case 1: // Crane Game
+		case 8: // Crane Game
 			MallCrane();
 			break;
-		case 2: // Arcade
+		case 9: // Arcade
 			MallArcade();
 			break;
-		case 4: // Next Page (D-Pad Right)
-			return 1;
-		case 5: //Previous Page (D-Pad Left)
-			return 2;
-		case 6: //Town Map (Select)
+		case 30: //Town Map (Select)
 			MallMap();
 			break;
 		default:
 			break;
-	}
-	return 0;
-}
-
-void IwatodaiTravel()
-{
-	int page = 1;
-	while(true)
-	{
-		switch(page)
-		{	
-			case 0:
-				return;
-			case 1:
-				page = IwatodaiTravel1();
-				break;
-			case 2:
-				page = IwatodaiTravel2();
-				break;
-			 default:
-				break;
-		}
 	}
 	return;
 }
 
-int IwatodaiTravel1()
+void IwatodaiTravel()
 {
+	int mask = FindMaskIwatodai();
 	bool operation = ( GET_MONTH() == 10 ) && ( GET_DAY_OF_MONTH() == 4 ) && ( FUNCTION_0083() == 8 );
 	if(operation)
 	{
 		ChkIwa001_002();
-		return 0;
+		return;
 	}
 	if ( BIT_CHK( 9999 ) == 0 )
 	{
@@ -829,17 +550,17 @@ int IwatodaiTravel1()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of2);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
+	SEL_CHK_PAD(6,99);
 	//Open map on Select
-	SEL_CHK_PAD(8,6);
+	SEL_CHK_PAD(8,30);
 	//Open shops on Start
-	SEL_CHK_PAD(11,7);
-	//Next Page on D-Pad Right
-	SEL_CHK_PAD(13,4);
-	//Previous Page on D-Pad Left
-	SEL_CHK_PAD(15,5);
+	SEL_CHK_PAD(11,31);
+	if (mask != 0)
+	{
+		SET_MASK(mask);
+	}
 	int select = SEL( Iwatodai );
 	FUNCTION_0005();
 	CLOSE_MSG_WIN();
@@ -854,63 +575,22 @@ int IwatodaiTravel1()
 		case 2: // Iwatodai Strip Mall, Upper Floors
 			IwatodaiUpperFloor();
 			break;
-		case 4: // Next Page (D-Pad Right)
-			return 2;
-		case 5: //Previous Page (D-Pad Left)
-			return 2;
-		case 6: //Town Map (Select)
+		case 3: // Facilities
+			IwatodaiFacilities();
+			break;
+		case 4: // Town Map
 			IwatodaiMap();
 			break;
-		case 7: //Shops (Start)
+		case 30: //Town Map (Select)
+			IwatodaiMap();
+			break;
+		case 31: //Shops (Start)
 			IwatodaiFacilities();
 			break;
 		default:
 			break;
 	}
-	return 0;
-}
-
-int IwatodaiTravel2()
-{
-	OPEN_MSG_WIN();
-	MSG( Choose );
-	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page2of2);
-	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
-	//Open map on Select
-	SEL_CHK_PAD(8,6);
-	//Open shops on Start
-	SEL_CHK_PAD(11,7);
-	//Next Page on D-Pad Right
-	SEL_CHK_PAD(13,4);
-	//Previous Page on D-Pad Left
-	SEL_CHK_PAD(15,5);
-	int select = SEL( Iwatodai2 );
-	FUNCTION_0005();
-	CLOSE_MSG_WIN();
-	switch (select)
-	{
-		case 0: // Facilities
-			IwatodaiFacilities();
-			break;
-		case 1: // Town Map
-			IwatodaiMap();
-			break;
-		case 4: // Next Page (D-Pad Right)
-			return 1;
-		case 5: //Previous Page (D-Pad Left)
-			return 1;
-		case 6: //Town Map (Select)
-			IwatodaiMap();
-			break;
-		case 7: //Shops (Start)
-			IwatodaiFacilities();
-			break;
-		default:
-			break;
-	}
-	return 0;
+	return;
 }
 
 void IwatodaiFacilities()
@@ -918,11 +598,11 @@ void IwatodaiFacilities()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of1);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
+	SEL_CHK_PAD(6,99);
 	//Open map on Select
-	SEL_CHK_PAD(8,6);
+	SEL_CHK_PAD(8,30);
 	int select = SEL( IwatodaiFacilities );
 	FUNCTION_0005();
 	CLOSE_MSG_WIN();
@@ -940,7 +620,7 @@ void IwatodaiFacilities()
 		case 3: // Octopia
 			Octopia();
 			break;
-		case 6: //Town Map (Select)
+		case 30: //Town Map (Select)
 			IwatodaiMap();
 			break;
 		default:
@@ -951,6 +631,7 @@ void IwatodaiFacilities()
 
 void PortIslandTravel()
 {
+	int mask = FindMaskPort();
 	if ( BIT_CHK( 9999 ) == 0 )
 	{
 		ShowTutorial();
@@ -958,13 +639,17 @@ void PortIslandTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of1);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
+	SEL_CHK_PAD(6,99);
 	//Open map on Select
-	SEL_CHK_PAD(8,6);
+	SEL_CHK_PAD(8,30);
 	//Open shops on Start
-	SEL_CHK_PAD(11,7);
+	SEL_CHK_PAD(11,31);
+	if (mask != 0)
+	{
+		SET_MASK(mask);
+	}
 	int select = SEL( PortIsland );
 	FUNCTION_0005();
 	CLOSE_MSG_WIN();
@@ -982,10 +667,10 @@ void PortIslandTravel()
 		case 3: // Town Map
 			PortMap();
 			break;
-		case 6: // Town Map (Select)
+		case 30: // Town Map (Select)
 			PortMap();
 			break;
-		case 7: // Shops (Start)
+		case 31: // Shops (Start)
 			PortFacilities();
 			break;
 		default:
@@ -999,11 +684,11 @@ void PortFacilities()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of1);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
+	SEL_CHK_PAD(6,99);
 	//Open map on Select
-	SEL_CHK_PAD(8,6);
+	SEL_CHK_PAD(8,30);
 	int select = SEL( PortFacilities );
 	FUNCTION_0005();
 	CLOSE_MSG_WIN();
@@ -1015,7 +700,7 @@ void PortFacilities()
 		case 1: // Theater
 			PortTheater();
 			break;
-		case 6: // Town Map (Select)
+		case 30: // Town Map (Select)
 			PortMap();
 			break;
 		default:
@@ -1033,11 +718,11 @@ void ShrineTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of1);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
-	SEL_CHK_PAD(6,20);
+	SEL_CHK_PAD(6,99);
 	//Open map on Select
-	SEL_CHK_PAD(8,6);
+	SEL_CHK_PAD(8,30);
 	int select = SEL( Shrine );
 	FUNCTION_0005();
 	CLOSE_MSG_WIN();
@@ -1055,7 +740,7 @@ void ShrineTravel()
 		case 3: //Town Map
 			ShrineMap();
 			break;
-		case 6: // Town Map (Select)
+		case 30: // Town Map (Select)
 			ShrineMap();
 			break;
 		default:
@@ -1076,8 +761,8 @@ void TartarusTravel()
 			OPEN_MSG_WIN();
 			MSG( Choose );
 			FUNCTION_00B7(0);
-			FUNCTION_011C(13, Page1of1);
-			SEL_CHK_PAD( 6, 20 );
+			FUNCTION_011C(13, Test);
+			SEL_CHK_PAD(6,99);
 			if (!( ( ( ( ( ( ( ( ( ( ( ( ( BIT_CHK( 3501 ) == 1 ) || ( BIT_CHK( 3504 ) == 1 ) ) || ( BIT_CHK( 3505 ) == 1 ) ) || ( BIT_CHK( 3506 ) == 1 ) ) || ( BIT_CHK( 3507 ) == 1 ) ) || ( BIT_CHK( 3508 ) == 1 ) ) || ( BIT_CHK( 3509 ) == 1 ) ) 
 			|| ( BIT_CHK( 3510 ) == 1 ) ) || ( BIT_CHK( 3511 ) == 1 ) ) || ( BIT_CHK( 3512 ) == 1 ) ) || ( BIT_CHK( 3513 ) == 1 ) ) || ( BIT_CHK( 3514 ) == 1 ) ) || ( BIT_CHK( 3515 ) == 1 ) ))
 			{
@@ -1123,4 +808,102 @@ void YakushimaTravel()
 void MoonlightTravel()
 {
 	OpenMoonlightWin_001();
+}
+
+int FindMaskSchool()
+{
+    switch(GET_FIELD_MINOR())
+    {
+        case 6:
+            return 1;
+        case 1:
+            return 2;
+        case 7:
+            return 4;
+        case 11:
+            return 8;
+        case 16:
+            return 16;
+        case 20:
+            return 32;
+        case 4:
+            return 64;
+		case 3:
+			return 128;
+		case 5:
+			return 256;
+		default:
+			break;
+    }
+	return 0;
+}
+
+int FindMaskDorm()
+{
+    switch(GET_FIELD_MINOR())
+    {
+        case 1:
+            return 1;
+        case 9:
+            return 2;
+        case 2:
+            return 4;
+        case 3:
+            return 8;
+        case 4:
+            return 16;
+        case 5:
+            return 32;
+        case 6:
+            return 64;
+		default:
+			break;
+    }
+	return 0;
+}
+
+int FindMaskMall()
+{
+    switch(GET_FIELD_MINOR())
+    {
+        case 1:
+            return 1;
+        case 2:
+            return 2;
+        case 9:
+            return 4;
+		default:
+			break;
+    }
+	return 0;
+}
+
+int FindMaskIwatodai()
+{
+    switch(GET_FIELD_MINOR())
+    {
+        case 2:
+            return 1;
+        case 1:
+            return 2;
+        case 7:
+            return 4;
+		default:
+			break;
+    }
+	return 0;
+}
+
+int FindMaskPort()
+{
+    switch(GET_FIELD_MINOR())
+    {
+        case 1:
+            return 1;
+        case 2:
+            return 2;
+		default:
+			break;
+    }
+	return 0;
 }
