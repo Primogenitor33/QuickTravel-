@@ -1,7 +1,7 @@
 import ("QT/Chk_Access/Chk_Access_Dorm_F.flow");
 import ("QT/Chk_Access/Chk_Access_PaulowniaMall_F.flow");
 import ("QT/Chk_Access/Chk_Access_GekkoukanHigh.flow");
-import ("QT/Chk_Access/Chk_Access_DormQT.flow");
+import ("QT/Chk_Access/Chk_Access_Dorm.flow");
 import ("QT/Chk_Access/Chk_Access_PaulowniaMall.flow");
 import ("QT/Chk_Access/Chk_Access_IwatodaiStation.flow");
 import ("QT/Chk_Access/Chk_Access_PortIslandStation.flow");
