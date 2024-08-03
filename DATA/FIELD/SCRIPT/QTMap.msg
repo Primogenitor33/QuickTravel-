@@ -39,5 +39,17 @@
 [f 0 5 -258][f 1 31]Meeting Room[e]
 [f 0 8 -258][f 1 31]Cancel[e]
 
-[msg Test]
-[f 0 8 65278][f 1 31]  Test[n][f 0 21 9999][e]
+[msg MapSchoolNavi]
+[f 0 8 65278][f 1 31]  Gekkoukan High[n][f 0 21 9999][e]
+
+[msg MapMallNavi]
+[f 0 8 65278][f 1 31]  Paulownia Mall[n][f 0 21 9999][e]
+
+[msg MapPortNavi]
+[f 0 8 65278][f 1 31]  Port Island Station[n][f 0 21 9999][e]
+
+[msg MapIwatodaiNavi]
+[f 0 8 65278][f 1 31]  Iwatodai Station[n][f 0 21 9999][e]
+
+[msg MapDormNavi]
+[f 0 8 65278][f 1 31]  Iwatodai Dorm[n][f 0 21 9999][e]

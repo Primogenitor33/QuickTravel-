@@ -5,13 +5,9 @@ void QTMapDormTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	FUNCTION_011C(12, MapDormNavi);
 	//Close menu on Circle
 	SEL_CHK_PAD(6,20);
-	//Next Page on D-Pad Right
-	SEL_CHK_PAD(13,4);
-	//Previous Page on D-Pad Left
-	SEL_CHK_PAD(15,5);
 	int select = SEL( Dorm );
 	FUNCTION_0005();
 	CLOSE_MSG_WIN();
