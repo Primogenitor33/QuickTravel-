@@ -10,6 +10,7 @@ import ("Map/Mall.flow");
 import ("Map/PortIsland.flow");
 import ("Map/Iwatodai.flow");
 import ("Map/Dorm.flow");
+import ("QT/Dorm.msg");
 import ("QT/Chk_Access/Chk_Access.msg");
 import( "QTMap.msg" );
 
