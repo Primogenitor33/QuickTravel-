@@ -122,24 +122,12 @@ void FESDormTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	FUNCTION_011C(12, DormLobby);
 	//Close menu on Circle
 	SEL_CHK_PAD(6,99);
-	if( ( BIT_CHK( 721 ) == 0 ) && ( GET_FIELD_MINOR() == 10 ) )
-	{
-		SET_MASK( 9 );
-	}
-	else if( BIT_CHK( 721 ) == 0 )
+	if( BIT_CHK( 721 ) == 0 )
 	{
 		SET_MASK( 10 );
-	}
-	else if( GET_FIELD_MINOR() == 10 )
-	{
-		SET_MASK( 1 );
-	}
-	else
-	{
-		SET_MASK( 2 );
 	}
 	int choice = SEL( Dorm_F );
 	FUNCTION_0005();
@@ -173,7 +161,7 @@ void FESMallTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	FUNCTION_011C(12, MallLobby);
 	//Close menu on Circle
 	SEL_CHK_PAD(6,99);
 	//Open shops on Start
@@ -203,7 +191,7 @@ void FESMallFacilities()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	FUNCTION_011C(12, MallLobby);
 	//Close menu on Circle
 	SEL_CHK_PAD(6,99);
 	int select = SEL( FESMallFacilities );
@@ -251,7 +239,7 @@ void SchoolTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Test);
+	SchoolNavi();
 	//Close menu on Circle
 	SEL_CHK_PAD(6,99);
 	//Open map on Select
@@ -309,6 +297,43 @@ void SchoolTravel()
 		default:
 			break;
 	}
+	return;
+}
+
+void SchoolNavi()
+{
+	switch(GET_FIELD_MINOR())
+    {
+        case 2:
+            FUNCTION_011C(12, SchoolEntrance);
+			break;
+        case 1:
+            FUNCTION_011C(12, SchoolLobby);
+			break;
+        case 7:
+            FUNCTION_011C(12, SchoolFacultyHall);
+			break;
+        case 11:
+            FUNCTION_011C(12, SchoolLaboratoryHall);
+			break;
+        case 16:
+            FUNCTION_011C(12, SchoolCorridor);
+			break;
+        case 20:
+            FUNCTION_011C(12, SchoolSportsHall);
+			break;
+        case 4:
+            FUNCTION_011C(12, SchoolSecondHall);
+			break;
+		case 3:
+			FUNCTION_011C(12, SchoolHomeroom);
+			break;
+		case 5:
+			FUNCTION_011C(12, SchoolRooftop);
+			break;
+		default:
+			break;
+    }
 	return;
 }
 
@@ -866,7 +891,7 @@ int FindMaskSchool()
 {
     switch(GET_FIELD_MINOR())
     {
-        case 6:
+        case 2:
             return 1;
         case 1:
             return 2;

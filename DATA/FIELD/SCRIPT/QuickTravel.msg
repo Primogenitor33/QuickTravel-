@@ -1,11 +1,11 @@
+[msg Test]
+[f 0 8 65278][f 1 31]  test[n][f 0 21 9999][e]
+
 [msg Choose]
 [f 0 8 -258][f 1 31]> Where would you like to go?[e]
 
 [msg TakeTime]
 [f 0 8 -258][f 1 31]> Using this Facility will take time.[n]Continue?[n][e]
-
-[msg Test]
-[f 0 8 65278][f 1 31]  Test[n][f 0 21 9999][e]
 
 [sel School]
 [f 0 8 -258][f 1 31]School Entranceway[e]
@@ -21,6 +21,26 @@
 [f 0 8 -258][f 1 31]Town Map[e]
 [f 0 8 -258][f 1 31]Cancel[e]
 
+[msg SchoolEntrance]
+[f 0 8 65278][f 1 31]  Gekkoukan High[n]School Entranceway[n][f 0 21 9999][e]
+[msg SchoolLobby]
+[f 0 8 65278][f 1 31]  Gekkoukan High[n]Main Lobby[n][f 0 21 9999][e]
+[msg SchoolFacultyHall]
+[f 0 8 65278][f 1 31]  Gekkoukan High[n]Faculty Hall[n][f 0 21 9999][e]
+[msg SchoolLaboratoryHall]
+[f 0 8 65278][f 1 31]  Gekkoukan High[n]Laboratory Hall[n][f 0 21 9999][e]
+[msg SchoolCorridor]
+[f 0 8 65278][f 1 31]  Gekkoukan High[n]Corridor[n][f 0 21 9999][e]
+[msg SchoolSportsHall]
+[f 0 8 65278][f 1 31]  Gekkoukan High[n]Sports Clubs[n][f 0 21 9999][e]
+[msg SchoolSecondHall]
+[f 0 8 65278][f 1 31]  Gekkoukan High[n]2nd Floor, Hallway[n][f 0 21 9999][e]
+[msg SchoolHomeroom]
+[f 0 8 65278][f 1 31]  Gekkoukan High[n]Classrom 2-F[n][f 0 21 9999][e]
+[msg SchoolRooftop]
+[f 0 8 65278][f 1 31]  Gekkoukan High[n]2nd Floor, Hallway[n][f 0 21 9999][e]
+
+
 [sel Dorm]
 [f 0 5 -258][f 1 31]Your Room[e]
 [f 0 5 -258][f 1 31]Dorm Entrance[e]
@@ -31,6 +51,9 @@
 [f 0 5 -258][f 1 31]Meeting Room[e]
 [f 0 5 -258][f 1 31]Town Map[e]
 [f 0 8 -258][f 1 31]Cancel[e]
+
+[msg DormLobby]
+[f 0 8 65278][f 1 31]  Dorm[n]1st Floor, Lounge[n][f 0 21 9999][e]
 
 [sel DormEntrance]
 [f 0 5 -258][f 1 31]1st Floor, Lounge[e]
@@ -44,6 +67,9 @@
 [f 0 8 -258][f 1 31]Facilities[e]
 [f 0 8 -258][f 1 31]Town Map[e]
 [f 0 8 -258][f 1 31]Cancel[e]
+
+[msg MallLobby]
+[f 0 8 65278][f 1 31]  Paulownia Mall[n][f 0 21 9999][e]
 
 [sel MallFacilities]
 [f 0 8 -258][f 1 31]Velvet Room[e]
