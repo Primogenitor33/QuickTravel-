@@ -39,5 +39,5 @@
 [f 0 5 -258][f 1 31]Meeting Room[e]
 [f 0 8 -258][f 1 31]Cancel[e]
 
-[msg Page1of1]
-[f 0 8 65278][f 1 31]  Page 1 of 1.[n][f 0 21 9999][e]
+[msg Test]
+[f 0 8 65278][f 1 31]  Test[n][f 0 21 9999][e]

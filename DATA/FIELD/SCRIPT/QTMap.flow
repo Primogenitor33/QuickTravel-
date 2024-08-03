@@ -32,7 +32,7 @@ void QTMapMall()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of1);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
 	SEL_CHK_PAD(6,20);
 	int choice = SEL( Mall );
@@ -61,7 +61,7 @@ void QTMapPortIsland()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of1);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
 	SEL_CHK_PAD(6,20);
 	int choice = SEL( PortIsland );
@@ -87,7 +87,7 @@ void QTMapIwatodai()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of1);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
 	SEL_CHK_PAD(6,20);
 	int choice = SEL( Iwatodai );
