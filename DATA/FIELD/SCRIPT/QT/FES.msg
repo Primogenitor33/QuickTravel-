@@ -3,13 +3,16 @@
 [f 0 8 65278][f 1 31]Desert of Doors[e]
 [f 0 8 65278][f 1 31]Velvet Room[e]
 [f 0 8 65278][f 1 31]Paulownia Mall[e]
+[f 0 8 65278][f 1 31]Cancel[e]
 
 [sel FESMall top]
 [f 0 8 65278][f 1 31]Iwatodai Dorm[e]
 [f 0 8 65278][f 1 31]Shops[e]
+[f 0 8 65278][f 1 31]Cancel[e]
 
 [sel FESMallFacilities]
 [f 0 8 -258][f 1 31]Be blue V[e]
 [f 0 8 -258][f 1 31]Police Station[e]
 [f 0 8 -258][f 1 31]Shinshoudo Antiques[e]
 [f 0 8 -258][f 1 31]Aohige Pharmacy[e]
+[f 0 8 65278][f 1 31]Cancel[e]
