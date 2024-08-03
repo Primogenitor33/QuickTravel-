@@ -92,6 +92,12 @@
 [f 0 8 65278][f 1 31]Town Map[e]
 [f 0 8 -258][f 1 31]Cancel[e]
 
+[sel Godaigo]
+[f 0 8 -258][f 1 31]1st Floor, Lobby[e]
+[f 0 8 -258][f 1 31]2nd Floor, Hallway[e]
+[f 0 5 -258][f 1 31]3rd Floor, Hallway[e]
+[f 0 8 -258][f 1 31]Cancel[e]
+
 [sel Tartarus top]
 [f 0 8 65278][f 1 31]Thebel[e]
 [f 0 8 65278][f 1 31]Velvet Room[e]
@@ -105,10 +111,12 @@
 [msg No_Facilities]
 [f 0 8 -258][f 1 31]There are no facilities in this location.[n][f 0 4][e]
 
+[msg No_Map]
+[f 0 8 -258][f 1 31]You can't access the Map here.[n][f 0 4][e]
+
 [msg Same]
 [f 0 8 -258][f 1 31]You are already there.[n][f 0 4][e]
 
 [msg QT_TUTORIAL]
-[f 0 8 65278][f 1 31][f 2 2 65535 65535][f 2 3 65535 0]You can press Left or Right on the D-Pad to go to the[n]Previous or Next Page.[n][f 0 4][e]
 [f 0 8 65278][f 1 31][f 2 2 65535 65535][f 2 3 65535 0]You can press Select to open the Map.[n](Only when the QT menu is open.)[n][f 0 4][e]
 [f 0 8 65278][f 1 31][f 2 2 65535 65535][f 2 3 65535 0]You can press Start to open the Shops Menu.[n](Only when the QT menu is open.)[n][f 0 4][e]

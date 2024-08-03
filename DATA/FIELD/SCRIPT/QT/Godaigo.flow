@@ -1,0 +1,114 @@
+void GodaigoLobby()
+{
+	switch(GET_FIELD_MINOR())
+	{
+		case 2: //1F, Lobby
+			OPEN_MSG_WIN();
+			MSG( Same );
+			CLOSE_MSG_WIN();
+			break;
+		case 3: //Godaigo, 2nd Floor
+			if(ChkGoda003_002())
+			{
+				gotoGodaigoLobby();
+			}
+			break;
+		case 4: // Godaigo, 3rd Floor
+			if(ChkGoda004_003())
+			{
+				if(ChkGoda003_002())
+				{
+					gotoGodaigoLobby();
+				}
+			}
+			break;
+		default:
+			No_QuickTravel();
+			break;
+	}
+	return;
+}
+
+void gotoGodaigoLobby()
+{
+	FADE( 2, 0 );
+	FADE_SYNC();
+	CALL_FIELD( 14, 2, 0, 0 );
+}
+
+void GodaigoFloorTwo()
+{
+	switch(GET_FIELD_MINOR())
+	{
+		case 2: //1F, Lobby
+			if(ChkGoda002_003())
+			{
+				gotoGodaigoFloorTwoFromOne();
+			}
+		case 3: //Godaigo, 2nd Floor
+			OPEN_MSG_WIN();
+			MSG( Same );
+			CLOSE_MSG_WIN();
+			break;
+		case 4: // Godaigo, 3rd Floor
+			if(ChkGoda004_003())
+			{
+				gotoGodaigoFloorTwoFromThree();
+			}
+			break;
+		default:
+			No_QuickTravel();
+			break;
+	}
+	return;
+}
+
+void gotoGodaigoFloorTwoFromOne()
+{
+	FADE( 2, 0 );
+	FADE_SYNC();
+	CALL_FIELD( 14, 3, 1, 0 );
+}
+
+void gotoGodaigoFloorTwoFromThree()
+{
+	FADE( 2, 0 );
+	FADE_SYNC();
+	CALL_FIELD( 14, 3, 0, 0 );
+}
+
+void GodaigoFloorThree()
+{
+	switch(GET_FIELD_MINOR())
+	{
+		case 2: //1F, Lobby
+			if(ChkGoda002_003())
+			{
+				if(ChkGoda003_004())
+				{
+					gotoGodaigoFloorThree();
+				}
+			}
+		case 3: //Godaigo, 2nd Floor
+			if(ChkGoda003_004())
+			{
+				gotoGodaigoFloorThree();
+			}
+		case 4: // Godaigo, 3rd Floor
+			OPEN_MSG_WIN();
+			MSG( Same );
+			CLOSE_MSG_WIN();
+			break;
+		default:
+			No_QuickTravel();
+			break;
+	}
+	return;
+}
+
+void gotoGodaigoFloorThree()
+{
+	FADE( 2, 0 );
+	FADE_SYNC();
+	CALL_FIELD( 14, 4, 0, 0 );
+}

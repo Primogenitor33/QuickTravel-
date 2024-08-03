@@ -5,6 +5,7 @@ import ("QT/Chk_Access/Chk_Access_DormQT.flow");
 import ("QT/Chk_Access/Chk_Access_PaulowniaMall.flow");
 import ("QT/Chk_Access/Chk_Access_IwatodaiStation.flow");
 import ("QT/Chk_Access/Chk_Access_PortIslandStation.flow");
+import ("QT/Chk_Access/Chk_Access_Godaigo.flow");
 import ("QT/Chk_Access/Chk_Access_Tartarus.flow");
 import ("QT/Chk_Access/Chk_Access_YakushimaBeach.flow");
 import ("QT/Chk_Access/Chk_Access_MoonlightBridge.flow");
@@ -17,6 +18,7 @@ import ("QT/Mall.flow");
 import ("QT/Iwatodai.flow");
 import ("QT/PortIsland.flow");
 import ("QT/Shrine.flow");
+import ("QT/Godaigo.flow");
 import ("Records/Record.flow");
 import ("QT/Dorm.msg");
 import ("QT/Shrine.msg");
@@ -55,7 +57,7 @@ void QuickTravelDisplay()
 			ShrineTravel();
 			break;
 		case 14: // Godaigo (Kyoto Trip)
-			No_QuickTravel();
+			GodaigoTravel();
 			break;
 		case 32: // Tartarus
 			if(GET_FLOOR_ID() == 1)
@@ -99,6 +101,14 @@ void No_Facilities()
 {
 	OPEN_MSG_WIN();
 	MSG( No_Facilities );
+	CLOSE_MSG_WIN();
+	return;
+}
+
+void No_Map()
+{
+	OPEN_MSG_WIN();
+	MSG( No_Map );
 	CLOSE_MSG_WIN();
 	return;
 }
@@ -742,6 +752,48 @@ void ShrineTravel()
 			break;
 		case 30: // Town Map (Select)
 			ShrineMap();
+			break;
+		default:
+			break;
+	}
+	return;
+}
+
+void GodaigoTravel()
+{
+	if ( BIT_CHK( 9999 ) == 0 )
+	{
+		ShowTutorial();
+	}
+	OPEN_MSG_WIN();
+	MSG( Choose );
+	FUNCTION_00B7(0);
+	FUNCTION_011C(12, Test);
+	//Close menu on Circle
+	SEL_CHK_PAD(6,99);
+	//Open map on Select
+	SEL_CHK_PAD(8,30);
+	//Open shops on Start
+	SEL_CHK_PAD(8,31);
+	int select = SEL( Godaigo );
+	FUNCTION_0005();
+	CLOSE_MSG_WIN();
+	switch (select)
+	{
+		case 0: // Godaigo, 1st Floor, Lobby
+			GodaigoLobby();
+			break;
+		case 1: // Godaigo, 2nd Floor
+			GodaigoFloorTwo();
+			break;
+		case 2: // Godaigo, 3rd Floor
+			GodaigoFloorThree();
+			break;
+		case 30: // Town Map (Select)
+			No_Map();
+			break;
+		case 31: // Shops (Start)
+			No_Facilities();
 			break;
 		default:
 			break;
