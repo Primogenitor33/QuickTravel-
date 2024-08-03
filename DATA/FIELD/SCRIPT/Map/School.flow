@@ -19,7 +19,7 @@ void QTMapSchoolTravel()
 	OPEN_MSG_WIN();
 	MSG( Choose );
 	FUNCTION_00B7(0);
-	FUNCTION_011C(12, Page1of3);
+	FUNCTION_011C(12, Test);
 	//Close menu on Circle
 	SEL_CHK_PAD(6,20);
 	//Next Page on D-Pad Right
