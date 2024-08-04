@@ -58,6 +58,21 @@ void DormRoom()
 				}
 			}
 			break;
+		case 7: // 5th Floor, Hallway
+			if(ChkDorm007_005())
+			{
+				if(ChkDorm005_004())
+				{
+					if(ChkDorm004_003())
+					{
+						if(ChkDorm003_001())
+						{
+							gotoDormRoom();
+						}
+					}
+				}
+			}
+			break;
 		case 9: // Dorm Entrance 
 			if(ChkDorm009_002())
 			{
@@ -179,6 +194,27 @@ void DormEntrance()
 				}
 			}
 			break;
+		case 7: // 5th Floor, Hallway
+			if(ChkDorm007_005())
+			{
+				if(ChkDorm006_005())
+				{
+					if(ChkDorm005_004())
+					{
+						if(ChkDorm004_003())
+						{
+							if(ChkDorm003_002())
+							{
+								if(ChkDorm002_009())
+								{
+									gotoDormEntrance();
+								}
+							}
+						}
+					}
+				}
+			}
+			break;
 		case 9: // Dorm Entrance 
 			OPEN_MSG_WIN();
 			MSG( Same );
@@ -270,6 +306,21 @@ void DormLobby()
 			break;
 		case 6: // Meeting Room 
 			if(ChkDorm006_005())
+			{
+				if(ChkDorm005_004())
+				{
+					if(ChkDorm004_003())
+					{
+						if(ChkDorm003_002())
+						{
+							gotoDormLobby();
+						}
+					}
+				}
+			}
+			break;
+		case 7: // 5th Floor, Hallway 
+			if(ChkDorm007_005())
 			{
 				if(ChkDorm005_004())
 				{
@@ -378,6 +429,18 @@ void DormFloorTwo()
 				}
 			}
 			break;
+		case 7: // 5th Floor, Hallway 
+			if(ChkDorm007_005())
+			{
+				if(ChkDorm005_004())
+				{
+					if(ChkDorm004_003())
+					{
+						gotoDormFloorTwo();
+					}
+				}
+			}
+			break;
 		case 9: // Dorm Entrance 
 			if(ChkDorm009_002())
 			{
@@ -456,6 +519,15 @@ void DormFloorThree()
 			break;
 		case 6: // Meeting Room 
 			if(ChkDorm006_005())
+			{
+				if(ChkDorm005_004())
+				{
+					gotoDormFloorThree();
+				}
+			}
+			break;
+		case 7: // 5th Floor, Hallway 
+			if(ChkDorm007_005
 			{
 				if(ChkDorm005_004())
 				{
@@ -559,6 +631,12 @@ void DormFloorFour()
 			break;
 		case 6: // Meeting Room 
 			if(ChkDorm006_005())
+			{
+				gotoDormFloorFour();
+			}
+			break;
+		case 7: // 5th Floor, Hallway 
+			if(ChkDorm007_005())
 			{
 				gotoDormFloorFour();
 			}
@@ -683,6 +761,15 @@ void MeetingRoom()
 			OPEN_MSG_WIN();
 			MSG( Same );
 			CLOSE_MSG_WIN();
+			break;
+		case 7: // 5th Floor, Hallway 
+			if(ChkDorm007_005())
+			{
+				if(ChkDorm005_006())
+				{
+					gotoMeetingRoom();
+				}
+			}
 			break;
 		case 9: // Dorm Entrance 
 			if(ChkDorm009_002())
@@ -822,6 +909,27 @@ void DormMap()
 			break;
 		case 6: // Meeting Room 
 			if(ChkDorm006_005())
+			{
+				if(ChkDorm005_004())
+				{
+					if(ChkDorm004_003())
+					{
+						if(ChkDorm003_002())
+						{
+							if(ChkDorm002_009())
+							{
+								if(ChkDorm009_MAP())
+								{
+									gotoDormMap();
+								}
+							}
+						}
+					}
+				}
+			}
+			break;
+		case 7: // 5th Floor, Hallway 
+			if(ChkDorm007_005())
 			{
 				if(ChkDorm005_004())
 				{
