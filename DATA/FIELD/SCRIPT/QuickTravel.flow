@@ -442,6 +442,9 @@ void DormNavi()
         case 6:
             FUNCTION_011C(12, DormMeetingRoom);
 			break;
+		case 7:
+			FUNCTION_011C(12, DormFloorFive);
+			break;
 		case 14:
 			FUNCTION_011C(12, DormShinjiRoom);
 			break;

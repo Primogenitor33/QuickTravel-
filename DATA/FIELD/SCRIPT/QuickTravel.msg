@@ -66,6 +66,8 @@
 [f 0 8 65278][f 1 31]  Iwatodai Dorm[n]4th Floor, Hallway[n][f 0 21 9999][e]
 [msg DormMeetingRoom]
 [f 0 8 65278][f 1 31]  Iwatodai Dorm[n]Meeting Room[n][f 0 21 9999][e]
+[msg DormFloorFive]
+[f 0 8 65278][f 1 31]  Iwatodai Dorm[n]5th Floor, Hallway[n][f 0 21 9999][e]
 [msg DormShinjiRoom]
 [f 0 8 65278][f 1 31]  Iwatodai Dorm[n]Shinji's Room[n][f 0 21 9999][e]
 [msg DormEmptyRoom]
