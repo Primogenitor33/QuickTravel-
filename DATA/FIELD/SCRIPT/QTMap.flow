@@ -43,11 +43,11 @@ void QTMapMall()
 		case 0: // Paulownia Mall
 			MallLobby();
 			break;
-		case 1: // Back Alley
-			MallAlley();
-			break;
-		case 2: // Club Escapade
+		case 1: // Club Escapade
 			MallClub();
+			break;
+		case 2: // Back Alley
+			MallAlley();
 			break;
 		default:
 			MallMap();

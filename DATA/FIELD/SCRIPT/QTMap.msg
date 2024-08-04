@@ -15,8 +15,8 @@
 
 [sel Mall]
 [f 0 8 -258][f 1 31]Paulownia Mall[e]
-[f 0 8 -258][f 1 31]Back Alley[e]
 [f 0 8 -258][f 1 31]Club Escapade[e]
+[f 0 8 -258][f 1 31]Back Alley[e]
 [f 0 8 -258][f 1 31]Cancel[e]
 
 [sel PortIsland]
