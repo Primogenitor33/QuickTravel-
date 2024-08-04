@@ -104,6 +104,11 @@ void IwatodaiMap()
 		BIT_OFF( 3091 );
 		BIT_OFF( 3092 );
 		BIT_OFF( 3093 );
+		FUNCTION_00BC( 3 );
+		FUNCTION_00BF();
+		FUNCTION_000C( 10 );
+		FADE( 1, 0 );
+		FADE_SYNC();
 		CALL_MAP( 3 );
 		FUNCTION_00BE();
 		return;
@@ -111,6 +116,11 @@ void IwatodaiMap()
 	else 
 	{
 		BIT_OFF( 3090 );
+		FUNCTION_00BC( 3 );
+		FUNCTION_00BF();
+		FUNCTION_000C( 10 );
+		FADE( 1, 0 );
+		FADE_SYNC();
 		CALL_MAP( 3 );
 		FUNCTION_00BE();
 		return;

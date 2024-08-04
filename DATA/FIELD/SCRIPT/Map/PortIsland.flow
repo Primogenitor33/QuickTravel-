@@ -57,6 +57,11 @@ void PortMap()
 		BIT_OFF( 3090 );
 		BIT_OFF( 3092 );
 		BIT_OFF( 3093 );
+		FUNCTION_00BC( 2 );
+		FUNCTION_00BF();
+		FUNCTION_000C( 10 );
+		FADE( 1, 0 );
+		FADE_SYNC();
 		CALL_MAP( 2 );
 		FUNCTION_00BE();
 		return;
@@ -64,6 +69,11 @@ void PortMap()
 	else 
 	{
 		BIT_OFF( 3091 );
+		FUNCTION_00BC( 2 );
+		FUNCTION_00BF();
+		FUNCTION_000C( 10 );
+		FADE( 1, 0 );
+		FADE_SYNC();
 		CALL_MAP( 2 );
 		FUNCTION_00BE();
         return;
