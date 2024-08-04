@@ -36,7 +36,7 @@
 [msg SchoolSecondHall]
 [f 0 8 65278][f 1 31]  Gekkoukan High[n]2nd Floor, Hallway[n][f 0 21 9999][e]
 [msg SchoolHomeroom]
-[f 0 8 65278][f 1 31]  Gekkoukan High[n]Classrom 2-F[n][f 0 21 9999][e]
+[f 0 8 65278][f 1 31]  Gekkoukan High[n]Classroom 2-F[n][f 0 21 9999][e]
 [msg SchoolRooftop]
 [f 0 8 65278][f 1 31]  Gekkoukan High[n]Rooftop[n][f 0 21 9999][e]
 
