@@ -184,13 +184,13 @@
 [f 0 8 -258][f 1 31]You can't Quick Travel here.[n][f 0 4][e]
 
 [msg No_Facilities]
-[f 0 8 -258][f 1 31]There are no facilities in this location.[n][f 0 4][e]
+[f 0 8 -258][f 1 31]> There are no facilities in this location.[n][f 0 4][e]
 
 [msg No_Map]
-[f 0 8 -258][f 1 31]You can't access the Map here.[n][f 0 4][e]
+[f 0 8 -258][f 1 31]> You can't access the Map here.[n][f 0 4][e]
 
 [msg Same]
-[f 0 8 -258][f 1 31]You are already there.[n][f 0 4][e]
+[f 0 8 -258][f 1 31]> You are already there.[n][f 0 4][e]
 
 [msg QT_TUTORIAL]
 [f 0 8 65278][f 1 31][f 2 2 65535 65535][f 2 3 65535 0]You can press Select to open the Map.[n](Only when the QT menu is open.)[n][f 0 4][e]
